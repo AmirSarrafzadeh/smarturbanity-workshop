@@ -7,216 +7,116 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --green: #2D6A4F;
-    --green-light: #52B788;
-    --green-pale: #D8F3DC;
-    --gold: #E9C46A;
-    --dark: #1A1A2E;
-    --mid: #374151;
-    --muted: #6B7280;
-    --bg: #F8FAF8;
-    --white: #FFFFFF;
-    --border: #E5EDE7;
-    --shadow: 0 4px 24px rgba(45,106,79,0.10);
-    --radius: 14px;
+    --green:#2D6A4F; --green-light:#52B788; --green-pale:#D8F3DC;
+    --gold:#E9C46A; --dark:#1A1A2E; --mid:#374151; --muted:#6B7280;
+    --bg:#F8FAF8; --border:#E5EDE7; --shadow:0 4px 24px rgba(45,106,79,0.10); --radius:14px;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--dark); min-height: 100vh; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--dark);min-height:100vh;}
 
-  header {
-    background: var(--green);
-    color: white;
-    padding: 0 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.18);
-  }
-  .header-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    height: 64px;
-    justify-content: space-between;
-  }
-  .logo-area { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-  .logo-badge {
-    width: 40px; height: 40px;
-    background: var(--gold);
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.2rem;
-    color: var(--dark);
-    flex-shrink: 0;
-  }
-  .logo-text { font-size: 1.1rem; font-weight: 600; }
-  .logo-sub { font-size: 0.72rem; opacity: 0.75; margin-top: 1px; }
+  header{background:var(--green);color:white;padding:0 2rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,0.18);}
+  .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;height:64px;justify-content:space-between;}
+  .logo-area{display:flex;align-items:center;gap:12px;flex-shrink:0;}
+  .logo-badge{width:40px;height:40px;background:var(--gold);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--dark);flex-shrink:0;}
+  .logo-text{font-size:1.1rem;font-weight:600;} .logo-sub{font-size:0.72rem;opacity:0.75;margin-top:1px;}
+  nav{display:flex;gap:2px;align-items:center;}
+  .tab-btn{background:transparent;border:none;color:rgba(255,255,255,0.72);font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:500;padding:0.5rem 1rem;border-radius:8px;cursor:pointer;transition:all 0.18s;white-space:nowrap;}
+  .tab-btn:hover{background:rgba(255,255,255,0.12);color:white;} .tab-btn.active{background:rgba(255,255,255,0.18);color:white;font-weight:600;}
 
-  nav { display: flex; gap: 2px; align-items: center; }
-  .tab-btn {
-    background: transparent;
-    border: none;
-    color: rgba(255,255,255,0.72);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.18s;
-    white-space: nowrap;
-  }
-  .tab-btn:hover { background: rgba(255,255,255,0.12); color: white; }
-  .tab-btn.active { background: rgba(255,255,255,0.18); color: white; font-weight: 600; }
+  main{max-width:1100px;margin:0 auto;padding:2.5rem 2rem 4rem;}
+  .panel{display:none;animation:fadeIn 0.3s ease;} .panel.active{display:block;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
-  main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
-  .panel { display: none; animation: fadeIn 0.3s ease; }
-  .panel.active { display: block; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .about-hero{background:linear-gradient(135deg,var(--green) 0%,#1B4332 100%);border-radius:var(--radius);padding:3.5rem 3rem;color:white;margin-bottom:2rem;position:relative;overflow:hidden;}
+  .about-tag{display:inline-block;background:var(--gold);color:var(--dark);font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:1.2rem;}
+  .about-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,5vw,2.8rem);line-height:1.15;margin-bottom:1rem;}
+  .about-hero p{font-size:1rem;line-height:1.7;opacity:0.88;max-width:620px;}
+  .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-bottom:2rem;}
+  .info-card{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;box-shadow:var(--shadow);}
+  .info-card-icon{width:42px;height:42px;background:var(--green-pale);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1rem;}
+  .info-card h3{font-size:0.95rem;font-weight:600;margin-bottom:0.4rem;} .info-card p{font-size:0.87rem;color:var(--muted);line-height:1.6;}
+  .pilot-cities{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:2rem;box-shadow:var(--shadow);}
+  .pilot-cities h2{font-family:'DM Serif Display',serif;font-size:1.4rem;margin-bottom:1.2rem;}
+  .cities-row{display:flex;flex-wrap:wrap;gap:0.7rem;}
+  .city-chip{background:var(--green-pale);color:var(--green);font-size:0.85rem;font-weight:600;padding:6px 16px;border-radius:100px;border:1px solid rgba(82,183,136,0.3);}
+  .city-chip.highlight{background:var(--green);color:white;}
 
-  .about-hero {
-    background: linear-gradient(135deg, var(--green) 0%, #1B4332 100%);
-    border-radius: var(--radius);
-    padding: 3.5rem 3rem;
-    color: white;
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .about-hero::before { content:''; position:absolute; top:-60px; right:-60px; width:250px; height:250px; background:rgba(255,255,255,0.05); border-radius:50%; }
-  .about-tag {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--dark);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 4px 12px;
-    border-radius: 100px;
-    margin-bottom: 1.2rem;
-  }
-  .about-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem,5vw,2.8rem); line-height: 1.15; margin-bottom: 1rem; }
-  .about-hero p { font-size: 1rem; line-height: 1.7; opacity: 0.88; max-width: 620px; }
+  .idea-header{border-radius:var(--radius);padding:2.5rem 2.5rem 2rem;margin-bottom:2rem;color:white;position:relative;overflow:hidden;}
+  .idea-header.citizen{background:linear-gradient(135deg,#1D6A8A 0%,#0D4F6B 100%);}
+  .idea-header.dss{background:linear-gradient(135deg,#6B3E8A 0%,#4A2066 100%);}
+  .idea-header.access{background:linear-gradient(135deg,#2D6A4F 0%,#1B4332 100%);}
+  .idea-header h2{font-family:'DM Serif Display',serif;font-size:1.8rem;margin-bottom:0.6rem;}
+  .idea-header p{opacity:0.88;font-size:0.95rem;line-height:1.7;max-width:600px;}
+  .idea-icon{position:absolute;right:2rem;top:50%;transform:translateY(-50%);font-size:5rem;opacity:0.15;}
 
-  .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-bottom: 2rem; }
-  .info-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
-  .info-card-icon { width:42px; height:42px; background:var(--green-pale); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; margin-bottom:1rem; }
-  .info-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem; }
-  .info-card p { font-size: 0.87rem; color: var(--muted); line-height: 1.6; }
+  .brainstorm-layout{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+  .submit-box{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:1.8rem;box-shadow:var(--shadow);}
+  .submit-box h3{font-size:1rem;font-weight:600;margin-bottom:0.8rem;display:flex;align-items:center;gap:8px;}
+  .dot{width:8px;height:8px;border-radius:50%;display:inline-block;}
+  .status-bar{display:flex;align-items:center;gap:6px;font-size:0.78rem;color:var(--muted);margin-bottom:1rem;}
+  .status-dot{width:7px;height:7px;border-radius:50%;background:#9CA3AF;} .status-dot.connected{background:#22C55E;} .status-dot.error{background:#EF4444;}
 
-  .pilot-cities { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); }
-  .pilot-cities h2 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; margin-bottom: 1.2rem; }
-  .cities-row { display: flex; flex-wrap: wrap; gap: 0.7rem; }
-  .city-chip { background: var(--green-pale); color: var(--green); font-size: 0.85rem; font-weight: 600; padding: 6px 16px; border-radius: 100px; border: 1px solid rgba(82,183,136,0.3); }
-  .city-chip.highlight { background: var(--green); color: white; }
+  label{display:block;font-size:0.83rem;font-weight:600;color:var(--mid);margin-bottom:0.4rem;}
+  input[type="text"],textarea{width:100%;border:1.5px solid var(--border);border-radius:8px;padding:0.7rem 0.9rem;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--dark);background:var(--bg);transition:border-color 0.15s;margin-bottom:1rem;outline:none;}
+  input[type="text"]:focus,textarea:focus{border-color:var(--green-light);background:white;}
+  textarea{resize:vertical;min-height:110px;}
+  .tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem;}
+  .tag-option{border:1.5px solid var(--border);border-radius:100px;padding:4px 12px;font-size:0.8rem;cursor:pointer;transition:all 0.15s;background:white;color:var(--mid);font-family:'DM Sans',sans-serif;}
+  .tag-option.selected{border-color:var(--green);background:var(--green-pale);color:var(--green);font-weight:600;}
+  .submit-btn{width:100%;background:var(--green);color:white;border:none;border-radius:8px;padding:0.85rem;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:600;cursor:pointer;transition:background 0.15s;}
+  .submit-btn:hover{background:#235c41;} .submit-btn:disabled{background:#9CA3AF;cursor:not-allowed;}
+  .submit-btn.citizen-btn{background:#1D6A8A;} .submit-btn.citizen-btn:hover{background:#145472;}
+  .submit-btn.dss-btn{background:#6B3E8A;} .submit-btn.dss-btn:hover{background:#562f70;}
+  .prompt-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem;}
+  .prompt-chip{font-size:0.78rem;padding:4px 10px;border-radius:6px;background:var(--green-pale);color:var(--green);cursor:pointer;border:1px solid transparent;transition:all 0.15s;font-family:'DM Sans',sans-serif;}
+  .prompt-chip:hover{border-color:var(--green-light);background:white;}
 
-  .idea-header { border-radius: var(--radius); padding: 2.5rem 2.5rem 2rem; margin-bottom: 2rem; color: white; position: relative; overflow: hidden; }
-  .idea-header.citizen { background: linear-gradient(135deg, #1D6A8A 0%, #0D4F6B 100%); }
-  .idea-header.dss { background: linear-gradient(135deg, #6B3E8A 0%, #4A2066 100%); }
-  .idea-header.access { background: linear-gradient(135deg, #2D6A4F 0%, #1B4332 100%); }
-  .idea-header h2 { font-family: 'DM Serif Display', serif; font-size: 1.8rem; margin-bottom: 0.6rem; }
-  .idea-header p { opacity: 0.88; font-size: 0.95rem; line-height: 1.7; max-width: 600px; }
-  .idea-icon { position:absolute; right:2rem; top:50%; transform:translateY(-50%); font-size:5rem; opacity:0.15; }
+  .ideas-wall{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:1.8rem;box-shadow:var(--shadow);}
+  .ideas-wall h3{font-size:1rem;font-weight:600;margin-bottom:1.2rem;color:var(--mid);}
+  .counter-badge{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:var(--dark);font-size:0.72rem;font-weight:700;min-width:22px;height:22px;border-radius:100px;padding:0 6px;margin-left:6px;}
+  .idea-cards{display:flex;flex-direction:column;gap:0.8rem;max-height:520px;overflow-y:auto;}
 
-  .brainstorm-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  @media (max-width: 700px) { .brainstorm-layout { grid-template-columns: 1fr; } }
+  .idea-card{border:1px solid var(--border);border-radius:10px;padding:1rem 1.1rem;background:var(--bg);animation:slideIn 0.25s ease;}
+  .idea-card.mine{border-color:#86EFAC;background:#F0FDF4;}
+  @keyframes slideIn{from{opacity:0;transform:translateX(8px)}to{opacity:1;transform:translateX(0)}}
+  .idea-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;margin-bottom:0.4rem;}
+  .idea-card-name{font-weight:600;font-size:0.88rem;}
+  .mine-label{font-size:0.7rem;color:#16A34A;font-weight:600;}
+  .idea-card-tag{font-size:0.73rem;font-weight:600;padding:2px 9px;border-radius:100px;white-space:nowrap;}
+  .idea-card-tag.feature{background:#DBEAFE;color:#1D4ED8;} .idea-card-tag.concern{background:#FEF3C7;color:#92400E;}
+  .idea-card-tag.idea{background:var(--green-pale);color:var(--green);} .idea-card-tag.question{background:#F3E8FF;color:#6B21A8;}
+  .idea-card-text{font-size:0.88rem;color:var(--mid);line-height:1.55;margin-bottom:0.5rem;}
+  .idea-card-footer{display:flex;justify-content:space-between;align-items:center;}
+  .idea-card-time{font-size:0.75rem;color:#9CA3AF;}
+  .idea-card-actions{display:flex;gap:6px;}
+  .action-btn{font-size:0.75rem;padding:3px 10px;border-radius:6px;border:1px solid var(--border);background:white;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.15s;}
+  .action-btn.edit-btn{color:#1D6A8A;border-color:#BAE6FD;} .action-btn.edit-btn:hover{background:#EFF6FF;}
+  .action-btn.delete-btn{color:#DC2626;border-color:#FCA5A5;} .action-btn.delete-btn:hover{background:#FEF2F2;}
 
-  .submit-box { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.8rem; box-shadow: var(--shadow); }
-  .submit-box h3 { font-size: 1rem; font-weight: 600; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 8px; }
-  .dot { width:8px; height:8px; border-radius:50%; display:inline-block; }
+  .empty-state{text-align:center;padding:2rem;color:var(--muted);font-size:0.9rem;}
+  .empty-icon{font-size:2.5rem;margin-bottom:0.7rem;}
+  .loading-state{text-align:center;padding:2rem;color:var(--muted);font-size:0.9rem;}
 
-  label { display: block; font-size: 0.83rem; font-weight: 600; color: var(--mid); margin-bottom: 0.4rem; }
-  input[type="text"], textarea {
-    width: 100%; border: 1.5px solid var(--border); border-radius: 8px;
-    padding: 0.7rem 0.9rem; font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
-    color: var(--dark); background: var(--bg); transition: border-color 0.15s; margin-bottom: 1rem; outline: none;
-  }
-  input[type="text"]:focus, textarea:focus { border-color: var(--green-light); background: white; }
-  textarea { resize: vertical; min-height: 120px; }
+  /* Edit Modal */
+  .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200;align-items:center;justify-content:center;}
+  .modal-overlay.open{display:flex;}
+  .modal{background:white;border-radius:var(--radius);padding:2rem;width:90%;max-width:480px;box-shadow:0 20px 60px rgba(0,0,0,0.2);}
+  .modal h3{font-size:1.1rem;font-weight:600;margin-bottom:1rem;}
+  .modal textarea{width:100%;border:1.5px solid var(--border);border-radius:8px;padding:0.7rem;font-family:'DM Sans',sans-serif;font-size:0.9rem;min-height:120px;resize:vertical;outline:none;margin-bottom:1rem;}
+  .modal textarea:focus{border-color:var(--green-light);}
+  .modal-btns{display:flex;gap:0.7rem;justify-content:flex-end;}
+  .modal-cancel{padding:0.6rem 1.2rem;border:1px solid var(--border);border-radius:8px;background:white;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.9rem;}
+  .modal-save{padding:0.6rem 1.4rem;border:none;border-radius:8px;background:var(--green);color:white;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;}
+  .modal-save:hover{background:#235c41;}
 
-  .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1rem; }
-  .tag-option {
-    border: 1.5px solid var(--border); border-radius: 100px; padding: 4px 12px;
-    font-size: 0.8rem; cursor: pointer; transition: all 0.15s; background: white;
-    color: var(--mid); font-family: 'DM Sans', sans-serif;
-  }
-  .tag-option.selected { border-color: var(--green); background: var(--green-pale); color: var(--green); font-weight: 600; }
+  .success-toast{position:fixed;bottom:2rem;right:2rem;background:var(--green);color:white;padding:0.9rem 1.5rem;border-radius:10px;font-size:0.9rem;font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,0.18);z-index:999;transform:translateY(80px);opacity:0;transition:all 0.3s ease;}
+  .success-toast.show{transform:translateY(0);opacity:1;}
 
-  .submit-btn {
-    width: 100%; background: var(--green); color: white; border: none; border-radius: 8px;
-    padding: 0.85rem; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600;
-    cursor: pointer; transition: background 0.15s, transform 0.1s;
-  }
-  .submit-btn:hover { background: #235c41; }
-  .submit-btn:active { transform: scale(0.99); }
-  .submit-btn:disabled { background: #9CA3AF; cursor: not-allowed; }
-  .submit-btn.citizen-btn { background: #1D6A8A; } .submit-btn.citizen-btn:hover { background: #145472; }
-  .submit-btn.dss-btn { background: #6B3E8A; } .submit-btn.dss-btn:hover { background: #562f70; }
-
-  .ideas-wall { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.8rem; box-shadow: var(--shadow); }
-  .ideas-wall h3 { font-size: 1rem; font-weight: 600; margin-bottom: 1.2rem; color: var(--mid); }
-  .idea-cards { display: flex; flex-direction: column; gap: 0.8rem; max-height: 480px; overflow-y: auto; }
-  .idea-card { border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.1rem; background: var(--bg); animation: slideIn 0.25s ease; }
-  @keyframes slideIn { from { opacity:0; transform:translateX(8px); } to { opacity:1; transform:translateX(0); } }
-  .idea-card-top { display:flex; justify-content:space-between; align-items:flex-start; gap:0.5rem; margin-bottom:0.4rem; }
-  .idea-card-name { font-weight: 600; font-size: 0.88rem; }
-  .idea-card-tag { font-size:0.73rem; font-weight:600; padding:2px 9px; border-radius:100px; white-space:nowrap; }
-  .idea-card-tag.feature { background:#DBEAFE; color:#1D4ED8; }
-  .idea-card-tag.concern { background:#FEF3C7; color:#92400E; }
-  .idea-card-tag.idea { background:var(--green-pale); color:var(--green); }
-  .idea-card-tag.question { background:#F3E8FF; color:#6B21A8; }
-  .idea-card-text { font-size:0.88rem; color:var(--mid); line-height:1.55; }
-  .idea-card-time { font-size:0.75rem; color:#9CA3AF; margin-top:0.4rem; }
-
-  .empty-state { text-align:center; padding:2rem; color:var(--muted); font-size:0.9rem; }
-  .empty-icon { font-size:2.5rem; margin-bottom:0.7rem; }
-
-  .loading-state { text-align:center; padding:2rem; color:var(--muted); font-size:0.9rem; }
-
-  .success-toast {
-    position: fixed; bottom: 2rem; right: 2rem;
-    background: var(--green); color: white;
-    padding: 0.9rem 1.5rem; border-radius: 10px;
-    font-size: 0.9rem; font-weight: 500;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-    z-index: 999; transform: translateY(80px); opacity: 0; transition: all 0.3s ease;
-  }
-  .success-toast.show { transform: translateY(0); opacity: 1; }
-
-  .prompt-chips { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:1rem; }
-  .prompt-chip {
-    font-size:0.78rem; padding:4px 10px; border-radius:6px;
-    background:var(--green-pale); color:var(--green); cursor:pointer;
-    border:1px solid transparent; transition:all 0.15s; font-family:'DM Sans',sans-serif;
-  }
-  .prompt-chip:hover { border-color:var(--green-light); background:white; }
-
-  .counter-badge {
-    display:inline-flex; align-items:center; justify-content:center;
-    background:var(--gold); color:var(--dark); font-size:0.72rem; font-weight:700;
-    min-width:22px; height:22px; border-radius:100px; padding:0 6px; margin-left:6px;
-  }
-
-  .status-bar {
-    display: flex; align-items: center; gap: 6px;
-    font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem;
-  }
-  .status-dot { width:7px; height:7px; border-radius:50%; background:#9CA3AF; }
-  .status-dot.connected { background: #22C55E; }
-  .status-dot.error { background: #EF4444; }
-
-  @media (max-width: 700px) {
-    header { padding: 0 1rem; }
-    .header-inner { flex-direction: column; height: auto; padding: 1rem 0; gap: 0.8rem; }
-    nav { flex-wrap: wrap; justify-content: center; }
-    main { padding: 1.5rem 1rem 3rem; }
-    .about-hero { padding: 2rem 1.5rem; }
-    .idea-header { padding: 1.8rem 1.5rem; }
-    .idea-icon { display: none; }
+  @media(max-width:700px){
+    header{padding:0 1rem;} .header-inner{flex-direction:column;height:auto;padding:1rem 0;gap:0.8rem;}
+    nav{flex-wrap:wrap;justify-content:center;} main{padding:1.5rem 1rem 3rem;}
+    .about-hero{padding:2rem 1.5rem;} .idea-header{padding:1.8rem 1.5rem;} .idea-icon{display:none;}
+    .brainstorm-layout{grid-template-columns:1fr;}
   }
 </style>
 </head>
@@ -226,23 +126,19 @@
   <div class="header-inner">
     <div class="logo-area">
       <div class="logo-badge">SU</div>
-      <div>
-        <div class="logo-text">SmartUrbanity</div>
-        <div class="logo-sub">EU DUT Partnership · Ideas Workshop</div>
-      </div>
+      <div><div class="logo-text">SmartUrbanity</div><div class="logo-sub">EU DUT Partnership · Ideas Workshop</div></div>
     </div>
     <nav>
-      <button class="tab-btn active" onclick="switchTab('about', this)">🏙️ About</button>
-      <button class="tab-btn" onclick="switchTab('citizen', this)">📱 Citizen App</button>
-      <button class="tab-btn" onclick="switchTab('dss', this)">🧭 DSS Platform</button>
-      <button class="tab-btn" onclick="switchTab('access', this)">🗺️ Accessibility</button>
+      <button class="tab-btn active" onclick="switchTab('about',this)">🏙️ About</button>
+      <button class="tab-btn" onclick="switchTab('citizen',this)">📱 Citizen App</button>
+      <button class="tab-btn" onclick="switchTab('dss',this)">🧭 DSS Platform</button>
+      <button class="tab-btn" onclick="switchTab('access',this)">🗺️ Accessibility</button>
     </nav>
   </div>
 </header>
 
 <main>
-
-  <!-- TAB 1: ABOUT -->
+  <!-- ABOUT -->
   <div id="tab-about" class="panel active">
     <div class="about-hero">
       <div class="about-tag">EU DUT 2023 – Partner 12 (ZHAW)</div>
@@ -250,51 +146,34 @@
       <p>SmartUrbanity is a European initiative transforming cities into 15-minute places — where daily needs are reachable within a short walk or cycle. We put citizens at the heart of urban planning through digital tools and community engagement.</p>
     </div>
     <div class="about-grid">
-      <div class="info-card">
-        <div class="info-card-icon">🎯</div>
-        <h3>Our Mission</h3>
-        <p>Enhance urban accessibility, inclusivity, and sustainability by integrating citizens directly into the planning process through a citizen-centric digital framework.</p>
-      </div>
-      <div class="info-card">
-        <div class="info-card-icon">🗓️</div>
-        <h3>Project Timeline</h3>
-        <p>Running from January 2025 to December 2027, with pilot testing across 5 European cities and the Greater Zurich Area.</p>
-      </div>
-      <div class="info-card">
-        <div class="info-card-icon">🇨🇭</div>
-        <h3>ZHAW's Role</h3>
-        <p>ZHAW (Partner 12) leads WP6 Dissemination and the Thurgau pilot, using MATSim agent-based modeling for DRT-PT integration with PostAuto AG.</p>
-      </div>
-      <div class="info-card">
-        <div class="info-card-icon">💡</div>
-        <h3>Three Digital Tools</h3>
-        <p>The toolkit includes a Citizen Engagement App, an Accessibility Analysis Platform, and a Decision Support System for evidence-based policymaking.</p>
-      </div>
+      <div class="info-card"><div class="info-card-icon">🎯</div><h3>Our Mission</h3><p>Enhance urban accessibility, inclusivity, and sustainability by integrating citizens directly into the planning process through a citizen-centric digital framework.</p></div>
+      <div class="info-card"><div class="info-card-icon">🗓️</div><h3>Project Timeline</h3><p>Running from January 2025 to December 2027, with pilot testing across 5 European cities and the Greater Zurich Area.</p></div>
+      <div class="info-card"><div class="info-card-icon">🇨🇭</div><h3>ZHAW's Role</h3><p>ZHAW (Partner 12) leads WP6 Dissemination and the Thurgau pilot, using MATSim agent-based modeling for DRT-PT integration with PostAuto AG.</p></div>
+      <div class="info-card"><div class="info-card-icon">💡</div><h3>Three Digital Tools</h3><p>The toolkit includes a Citizen Engagement App, an Accessibility Analysis Platform, and a Decision Support System for evidence-based policymaking.</p></div>
     </div>
     <div class="pilot-cities">
       <h2>Pilot Cities</h2>
       <div class="cities-row">
-        <span class="city-chip">🇮🇹 Rome</span>
-        <span class="city-chip">🇩🇪 Karlsruhe</span>
-        <span class="city-chip">🇹🇷 İzmir</span>
-        <span class="city-chip">🇫🇷 Lyon Metropolitan Area</span>
+        <span class="city-chip">🇮🇹 Rome</span><span class="city-chip">🇩🇪 Karlsruhe</span>
+        <span class="city-chip">🇹🇷 İzmir</span><span class="city-chip">🇫🇷 Lyon Metropolitan Area</span>
         <span class="city-chip highlight">🇨🇭 Thurgau (ZHAW)</span>
       </div>
     </div>
     <br>
     <div class="pilot-cities">
       <h2>Share Your Ideas</h2>
-      <p style="color:var(--muted); font-size:0.92rem; line-height:1.7;">
-        This workshop is your chance to shape SmartUrbanity's tools. Use the tabs above to explore each of the three platforms and share your ideas, concerns, and suggestions. All submissions are visible to everyone and saved for the project team at ZHAW.<br><br>
+      <p style="color:var(--muted);font-size:0.92rem;line-height:1.7;">
+        This workshop is your chance to shape SmartUrbanity's tools. Use the tabs above to share your ideas — they are saved permanently and visible to everyone.<br><br>
+        💡 <strong>Tip:</strong> After submitting, you can <strong>edit or delete your own ideas</strong> using the buttons that appear on your submissions. Your ideas are linked to your browser, so edit/delete works as long as you use the same device.<br><br>
         <strong>Click a tab above to get started →</strong>
       </p>
     </div>
   </div>
 
-  <!-- TAB 2: CITIZEN APP -->
+  <!-- CITIZEN APP -->
   <div id="tab-citizen" class="panel">
     <div class="idea-header citizen">
-      <div class="about-tag" style="background:rgba(255,255,255,0.2); color:white;">Brainstorming Session</div>
+      <div class="about-tag" style="background:rgba(255,255,255,0.2);color:white;">Brainstorming Session</div>
       <h2>Citizen Engagement App</h2>
       <p>A mobile app that brings citizens into the urban planning process. Users can report issues, track daily trips, share insights on safety and accessibility, and contribute to a data-rich understanding of mobility.</p>
       <div class="idea-icon">📱</div>
@@ -302,15 +181,13 @@
     <div class="brainstorm-layout">
       <div class="submit-box">
         <h3><span class="dot" style="background:#38BDF8;"></span> Submit Your Idea</h3>
-        <div class="status-bar"><span class="status-dot" id="citizen-status-dot"></span><span id="citizen-status-text">Connecting...</span></div>
-        <div>
-          <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.5rem; font-weight:600;">💡 INSPIRATION PROMPTS</p>
-          <div class="prompt-chips">
-            <span class="prompt-chip" onclick="fillPrompt('citizen', 'I would use the app more if it had...')">I'd use it more if...</span>
-            <span class="prompt-chip" onclick="fillPrompt('citizen', 'Citizens like me need...')">Citizens need...</span>
-            <span class="prompt-chip" onclick="fillPrompt('citizen', 'A concern I have is...')">A concern...</span>
-            <span class="prompt-chip" onclick="fillPrompt('citizen', 'A feature I would love is...')">Feature idea</span>
-          </div>
+        <div class="status-bar"><span class="status-dot" id="citizen-sd"></span><span id="citizen-st">Connecting...</span></div>
+        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem;font-weight:600;">💡 PROMPTS</p>
+        <div class="prompt-chips">
+          <span class="prompt-chip" onclick="fillPrompt('citizen','I would use the app more if it had...')">I'd use it more if...</span>
+          <span class="prompt-chip" onclick="fillPrompt('citizen','Citizens like me need...')">Citizens need...</span>
+          <span class="prompt-chip" onclick="fillPrompt('citizen','A concern I have is...')">A concern...</span>
+          <span class="prompt-chip" onclick="fillPrompt('citizen','A feature I would love is...')">Feature idea</span>
         </div>
         <label>Your Name (optional)</label>
         <input type="text" id="citizen-name" placeholder="e.g. Maria, Anonymous...">
@@ -322,7 +199,7 @@
           <span class="tag-option" data-val="question">❓ Question</span>
         </div>
         <label>Your idea or comment</label>
-        <textarea id="citizen-text" placeholder="Write your idea here... No idea is too small or too big!"></textarea>
+        <textarea id="citizen-text" placeholder="Write your idea here..."></textarea>
         <button class="submit-btn citizen-btn" id="citizen-submit" onclick="submitIdea('citizen')">Submit Idea →</button>
       </div>
       <div class="ideas-wall">
@@ -332,10 +209,10 @@
     </div>
   </div>
 
-  <!-- TAB 3: DSS -->
+  <!-- DSS -->
   <div id="tab-dss" class="panel">
     <div class="idea-header dss">
-      <div class="about-tag" style="background:rgba(255,255,255,0.2); color:white;">Brainstorming Session</div>
+      <div class="about-tag" style="background:rgba(255,255,255,0.2);color:white;">Brainstorming Session</div>
       <h2>Decision Support System (DSS)</h2>
       <p>A platform for policymakers to evaluate urban mobility interventions using agent-based models and data from the Citizen Engagement App. It helps assess demographic impacts, costs, equity, and urgency of transport decisions.</p>
       <div class="idea-icon">🧭</div>
@@ -343,15 +220,13 @@
     <div class="brainstorm-layout">
       <div class="submit-box">
         <h3><span class="dot" style="background:#A78BFA;"></span> Submit Your Idea</h3>
-        <div class="status-bar"><span class="status-dot" id="dss-status-dot"></span><span id="dss-status-text">Connecting...</span></div>
-        <div>
-          <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.5rem; font-weight:600;">💡 INSPIRATION PROMPTS</p>
-          <div class="prompt-chips">
-            <span class="prompt-chip" onclick="fillPrompt('dss', 'Policymakers need to see...')">Policymakers need...</span>
-            <span class="prompt-chip" onclick="fillPrompt('dss', 'A useful scenario to simulate would be...')">Simulate scenario</span>
-            <span class="prompt-chip" onclick="fillPrompt('dss', 'The data I would need to make decisions is...')">Data needed</span>
-            <span class="prompt-chip" onclick="fillPrompt('dss', 'A barrier to using this system might be...')">Possible barrier</span>
-          </div>
+        <div class="status-bar"><span class="status-dot" id="dss-sd"></span><span id="dss-st">Connecting...</span></div>
+        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem;font-weight:600;">💡 PROMPTS</p>
+        <div class="prompt-chips">
+          <span class="prompt-chip" onclick="fillPrompt('dss','Policymakers need to see...')">Policymakers need...</span>
+          <span class="prompt-chip" onclick="fillPrompt('dss','A useful scenario to simulate would be...')">Simulate scenario</span>
+          <span class="prompt-chip" onclick="fillPrompt('dss','The data I would need to make decisions is...')">Data needed</span>
+          <span class="prompt-chip" onclick="fillPrompt('dss','A barrier to using this system might be...')">Possible barrier</span>
         </div>
         <label>Your Name (optional)</label>
         <input type="text" id="dss-name" placeholder="e.g. Thomas, Anonymous...">
@@ -373,10 +248,10 @@
     </div>
   </div>
 
-  <!-- TAB 4: ACCESSIBILITY -->
+  <!-- ACCESSIBILITY -->
   <div id="tab-access" class="panel">
     <div class="idea-header access">
-      <div class="about-tag" style="background:rgba(255,255,255,0.2); color:white;">Brainstorming Session</div>
+      <div class="about-tag" style="background:rgba(255,255,255,0.2);color:white;">Brainstorming Session</div>
       <h2>Accessibility Analysis Platform</h2>
       <p>A WebGIS platform for visualizing accessibility data across communities. Features interactive maps, heatmaps, demographic filters, and community forums for upvoting transport issues and co-creating urban solutions.</p>
       <div class="idea-icon">🗺️</div>
@@ -384,15 +259,13 @@
     <div class="brainstorm-layout">
       <div class="submit-box">
         <h3><span class="dot" style="background:var(--green-light);"></span> Submit Your Idea</h3>
-        <div class="status-bar"><span class="status-dot" id="access-status-dot"></span><span id="access-status-text">Connecting...</span></div>
-        <div>
-          <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.5rem; font-weight:600;">💡 INSPIRATION PROMPTS</p>
-          <div class="prompt-chips">
-            <span class="prompt-chip" onclick="fillPrompt('access', 'Accessibility is a problem for me because...')">Accessibility gap</span>
-            <span class="prompt-chip" onclick="fillPrompt('access', 'A map layer I would find useful is...')">Map layer idea</span>
-            <span class="prompt-chip" onclick="fillPrompt('access', 'Groups that are often overlooked in planning are...')">Who is overlooked?</span>
-            <span class="prompt-chip" onclick="fillPrompt('access', 'I wish it were easier to reach...')">Reachability</span>
-          </div>
+        <div class="status-bar"><span class="status-dot" id="access-sd"></span><span id="access-st">Connecting...</span></div>
+        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem;font-weight:600;">💡 PROMPTS</p>
+        <div class="prompt-chips">
+          <span class="prompt-chip" onclick="fillPrompt('access','Accessibility is a problem for me because...')">Accessibility gap</span>
+          <span class="prompt-chip" onclick="fillPrompt('access','A map layer I would find useful is...')">Map layer idea</span>
+          <span class="prompt-chip" onclick="fillPrompt('access','Groups that are often overlooked in planning are...')">Who is overlooked?</span>
+          <span class="prompt-chip" onclick="fillPrompt('access','I wish it were easier to reach...')">Reachability</span>
         </div>
         <label>Your Name (optional)</label>
         <input type="text" id="access-name" placeholder="e.g. Sofia, Anonymous...">
@@ -413,39 +286,50 @@
       </div>
     </div>
   </div>
-
 </main>
 
-<div class="success-toast" id="toast">✅ Your idea has been submitted! Thank you.</div>
+<!-- Edit Modal -->
+<div class="modal-overlay" id="edit-modal">
+  <div class="modal">
+    <h3>✏️ Edit your idea</h3>
+    <textarea id="edit-textarea" placeholder="Update your idea..."></textarea>
+    <div class="modal-btns">
+      <button class="modal-cancel" onclick="closeModal()">Cancel</button>
+      <button class="modal-save" onclick="saveEdit()">Save changes</button>
+    </div>
+  </div>
+</div>
 
-<!-- Firebase SDK -->
+<div class="success-toast" id="toast"></div>
+
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, serverTimestamp }
+  import { getFirestore, collection, addDoc, updateDoc, deleteDoc, doc, onSnapshot, query, orderBy, serverTimestamp }
     from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-  const firebaseConfig = {
+  const db = getFirestore(initializeApp({
     apiKey: "AIzaSyBNfMRTa3ssqgHQgYoZjMkgt2EDRFwFCH8",
     authDomain: "smarturbanity-workshop.firebaseapp.com",
     projectId: "smarturbanity-workshop",
     storageBucket: "smarturbanity-workshop.firebasestorage.app",
     messagingSenderId: "459481021725",
-    appId: "1:459481021725:web:1d0abf27ac913297a8f5f4",
-    measurementId: "G-EFPCX9FWNL"
-  };
+    appId: "1:459481021725:web:1d0abf27ac913297a8f5f4"
+  }));
 
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+  // Unique browser session key
+  let sk = localStorage.getItem('su_sk');
+  if (!sk) { sk = 'u_' + Math.random().toString(36).substr(2,14) + '_' + Date.now(); localStorage.setItem('su_sk', sk); }
 
-  // ── TABS ──
-  window.switchTab = function(name, btn) {
+  let editDocId = null, editTab = null;
+
+  // Tabs
+  window.switchTab = (n, b) => {
     document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('tab-' + name).classList.add('active');
-    btn.classList.add('active');
+    document.querySelectorAll('.tab-btn').forEach(x => x.classList.remove('active'));
+    document.getElementById('tab-'+n).classList.add('active'); b.classList.add('active');
   };
 
-  // ── TAG SELECTION ──
+  // Tag selection
   document.querySelectorAll('.tag-row').forEach(row => {
     row.querySelectorAll('.tag-option').forEach(opt => {
       opt.addEventListener('click', () => {
@@ -455,115 +339,94 @@
     });
   });
 
-  // ── PROMPT FILL ──
-  window.fillPrompt = function(tab, text) {
-    document.getElementById(tab + '-text').value = text;
-    document.getElementById(tab + '-text').focus();
-  };
+  window.fillPrompt = (tab, text) => { document.getElementById(tab+'-text').value = text; document.getElementById(tab+'-text').focus(); };
 
-  // ── HELPERS ──
-  function escHtml(s) {
-    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  }
-  function tagLabel(t) {
-    return { idea:'💡 Idea', feature:'⭐ Feature', concern:'⚠️ Concern', question:'❓ Question' }[t] || t;
-  }
-  function setStatus(tab, connected) {
-    const dot = document.getElementById(tab + '-status-dot');
-    const txt = document.getElementById(tab + '-status-text');
-    if (connected) {
-      dot.className = 'status-dot connected';
-      txt.textContent = 'Live — ideas saved in real time';
-    } else {
-      dot.className = 'status-dot error';
-      txt.textContent = 'Connection error — try refreshing';
-    }
-  }
-  function showToast() {
-    const t = document.getElementById('toast');
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 3000);
+  const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const tagLabel = t => ({idea:'💡 Idea',feature:'⭐ Feature',concern:'⚠️ Concern',question:'❓ Question'}[t]||t);
+
+  function setStatus(tab, ok) {
+    document.getElementById(tab+'-sd').className = 'status-dot '+(ok?'connected':'error');
+    document.getElementById(tab+'-st').textContent = ok ? 'Live — ideas saved in real time' : 'Connection error — try refreshing';
   }
 
-  // ── RENDER WALL ──
-  function renderWall(tab, ideas) {
-    const wall = document.getElementById(tab + '-wall');
-    const count = document.getElementById(tab + '-count');
-    count.textContent = ideas.length;
-    if (ideas.length === 0) {
-      wall.innerHTML = '<div class="empty-state"><div class="empty-icon">💬</div>No ideas yet — be the first!</div>';
-      return;
-    }
-    wall.innerHTML = ideas.map(idea => `
-      <div class="idea-card">
+  function showToast(msg) {
+    const t = document.getElementById('toast'); t.textContent = msg;
+    t.classList.add('show'); setTimeout(()=>t.classList.remove('show'), 3000);
+  }
+
+  function renderWall(tab, docs) {
+    const wall = document.getElementById(tab+'-wall');
+    document.getElementById(tab+'-count').textContent = docs.length;
+    if (!docs.length) { wall.innerHTML='<div class="empty-state"><div class="empty-icon">💬</div>No ideas yet — be the first!</div>'; return; }
+    wall.innerHTML = docs.map(d => {
+      const mine = d.sessionKey === sk;
+      const ts = d.createdAt ? d.createdAt.toDate() : new Date();
+      const time = ts.toLocaleDateString('en-GB',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+      return `<div class="idea-card ${mine?'mine':''}">
         <div class="idea-card-top">
-          <span class="idea-card-name">👤 ${escHtml(idea.name)}</span>
-          <span class="idea-card-tag ${idea.tag}">${tagLabel(idea.tag)}</span>
+          <span class="idea-card-name">👤 ${esc(d.name)}${mine?' <span class="mine-label">· your idea</span>':''}</span>
+          <span class="idea-card-tag ${d.tag}">${tagLabel(d.tag)}</span>
         </div>
-        <div class="idea-card-text">${escHtml(idea.text)}</div>
-        <div class="idea-card-time">${idea.timeStr}</div>
-      </div>
-    `).join('');
+        <div class="idea-card-text">${esc(d.text)}</div>
+        <div class="idea-card-footer">
+          <span class="idea-card-time">${time}</span>
+          ${mine?`<div class="idea-card-actions">
+            <button class="action-btn edit-btn" onclick="openEdit('${tab}','${d.id}',\`${esc(d.text)}\`)">✏️ Edit</button>
+            <button class="action-btn delete-btn" onclick="deleteIdea('${tab}','${d.id}')">🗑️ Delete</button>
+          </div>`:''}
+        </div>
+      </div>`;
+    }).join('');
   }
 
-  // ── REAL-TIME LISTENERS ──
-  function listenToCollection(tab) {
-    const q = query(collection(db, tab + '-ideas'), orderBy('createdAt', 'desc'));
-    onSnapshot(q, (snapshot) => {
-      setStatus(tab, true);
-      const ideas = snapshot.docs.map(doc => {
-        const d = doc.data();
-        const ts = d.createdAt ? d.createdAt.toDate() : new Date();
-        return {
-          name: d.name || 'Anonymous',
-          text: d.text,
-          tag: d.tag || 'idea',
-          timeStr: ts.toLocaleDateString('en-GB', { day:'numeric', month:'short', hour:'2-digit', minute:'2-digit' })
-        };
-      });
-      renderWall(tab, ideas);
-    }, (error) => {
-      console.error(error);
-      setStatus(tab, false);
-    });
-  }
+  // Live listeners
+  ['citizen','dss','access'].forEach(tab => {
+    onSnapshot(query(collection(db,tab+'-ideas'),orderBy('createdAt','desc')), snap => {
+      setStatus(tab,true);
+      renderWall(tab, snap.docs.map(d=>({id:d.id,...d.data()})));
+    }, ()=>setStatus(tab,false));
+  });
 
-  listenToCollection('citizen');
-  listenToCollection('dss');
-  listenToCollection('access');
-
-  // ── SUBMIT ──
-  window.submitIdea = async function(tab) {
-    const nameEl = document.getElementById(tab + '-name');
-    const textEl = document.getElementById(tab + '-text');
-    const tagEl  = document.querySelector('#' + tab + '-tags .tag-option.selected');
-    const btn    = document.getElementById(tab + '-submit');
-
-    const text = textEl.value.trim();
-    if (!text) { textEl.style.borderColor = '#EF4444'; textEl.focus(); return; }
-    textEl.style.borderColor = '';
-
-    btn.disabled = true;
-    btn.textContent = 'Saving...';
-
+  // Submit
+  window.submitIdea = async (tab) => {
+    const nameEl=document.getElementById(tab+'-name'), textEl=document.getElementById(tab+'-text');
+    const tagEl=document.querySelector('#'+tab+'-tags .tag-option.selected'), btn=document.getElementById(tab+'-submit');
+    const text=textEl.value.trim();
+    if(!text){textEl.style.borderColor='#EF4444';textEl.focus();return;}
+    textEl.style.borderColor=''; btn.disabled=true; btn.textContent='Saving...';
     try {
-      await addDoc(collection(db, tab + '-ideas'), {
-        name: nameEl.value.trim() || 'Anonymous',
-        text: text,
-        tag: tagEl ? tagEl.dataset.val : 'idea',
-        createdAt: serverTimestamp()
+      await addDoc(collection(db,tab+'-ideas'),{
+        name:nameEl.value.trim()||'Anonymous', text, tag:tagEl?tagEl.dataset.val:'idea',
+        sessionKey:sk, createdAt:serverTimestamp()
       });
-      nameEl.value = '';
-      textEl.value = '';
-      showToast();
-    } catch (e) {
-      console.error(e);
-      alert('Error saving idea. Please try again.');
-    } finally {
-      btn.disabled = false;
-      btn.textContent = 'Submit Idea →';
-    }
+      nameEl.value=''; textEl.value='';
+      showToast('✅ Your idea has been submitted! Thank you.');
+    } catch(e){console.error(e);alert('Error saving. Please try again.');}
+    finally{btn.disabled=false;btn.textContent='Submit Idea →';}
   };
+
+  // Edit
+  window.openEdit = (tab, id, text) => {
+    editTab=tab; editDocId=id;
+    document.getElementById('edit-textarea').value=text;
+    document.getElementById('edit-modal').classList.add('open');
+  };
+  window.closeModal = () => { document.getElementById('edit-modal').classList.remove('open'); editDocId=null; editTab=null; };
+  window.saveEdit = async () => {
+    const newText=document.getElementById('edit-textarea').value.trim();
+    if(!newText) return;
+    try { await updateDoc(doc(db,editTab+'-ideas',editDocId),{text:newText}); closeModal(); showToast('✅ Your idea has been updated!'); }
+    catch(e){console.error(e);alert('Error updating.');}
+  };
+
+  // Delete
+  window.deleteIdea = async (tab, id) => {
+    if(!confirm('Are you sure you want to delete this idea?')) return;
+    try { await deleteDoc(doc(db,tab+'-ideas',id)); showToast('🗑️ Your idea has been deleted.'); }
+    catch(e){console.error(e);alert('Error deleting.');}
+  };
+
+  document.getElementById('edit-modal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal();});
 </script>
 </body>
 </html>
