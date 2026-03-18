@@ -396,7 +396,7 @@
   ['citizen','dss','access'].forEach(tab => {
     onSnapshot(query(collection(db,tab+'-ideas'),orderBy('createdAt','desc')), snap => {
       setStatus(tab,true);
-      renderWall(tab, snap.docs.map(d=>(({id:d.id,...d.data()})));
+      renderWall(tab, snap.docs.map(d=>({id:d.id,...d.data()})));
     }, ()=>setStatus(tab,false));
   });
 
