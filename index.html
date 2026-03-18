@@ -20,17 +20,9 @@
     --shadow: 0 4px 24px rgba(45,106,79,0.10);
     --radius: 14px;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--dark); min-height: 100vh; }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--dark);
-    min-height: 100vh;
-  }
-
-  /* ── HEADER ── */
   header {
     background: var(--green);
     color: white;
@@ -49,12 +41,7 @@
     height: 64px;
     justify-content: space-between;
   }
-  .logo-area {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
-  }
+  .logo-area { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
   .logo-badge {
     width: 40px; height: 40px;
     background: var(--gold);
@@ -63,18 +50,12 @@
     font-family: 'DM Serif Display', serif;
     font-size: 1.2rem;
     color: var(--dark);
-    font-weight: bold;
     flex-shrink: 0;
   }
-  .logo-text { font-size: 1.1rem; font-weight: 600; letter-spacing: -0.01em; }
+  .logo-text { font-size: 1.1rem; font-weight: 600; }
   .logo-sub { font-size: 0.72rem; opacity: 0.75; margin-top: 1px; }
 
-  /* ── TABS ── */
-  nav {
-    display: flex;
-    gap: 2px;
-    align-items: center;
-  }
+  nav { display: flex; gap: 2px; align-items: center; }
   .tab-btn {
     background: transparent;
     border: none;
@@ -91,15 +72,11 @@
   .tab-btn:hover { background: rgba(255,255,255,0.12); color: white; }
   .tab-btn.active { background: rgba(255,255,255,0.18); color: white; font-weight: 600; }
 
-  /* ── MAIN CONTENT ── */
   main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
-
-  /* ── PANELS ── */
   .panel { display: none; animation: fadeIn 0.3s ease; }
   .panel.active { display: block; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* ── ABOUT PANEL ── */
   .about-hero {
     background: linear-gradient(135deg, var(--green) 0%, #1B4332 100%);
     border-radius: var(--radius);
@@ -109,22 +86,7 @@
     position: relative;
     overflow: hidden;
   }
-  .about-hero::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -60px;
-    width: 250px; height: 250px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 50%;
-  }
-  .about-hero::after {
-    content: '';
-    position: absolute;
-    bottom: -80px; left: 60%;
-    width: 320px; height: 320px;
-    background: rgba(233,196,106,0.08);
-    border-radius: 50%;
-  }
+  .about-hero::before { content:''; position:absolute; top:-60px; right:-60px; width:250px; height:250px; background:rgba(255,255,255,0.05); border-radius:50%; }
   .about-tag {
     display: inline-block;
     background: var(--gold);
@@ -137,236 +99,116 @@
     border-radius: 100px;
     margin-bottom: 1.2rem;
   }
-  .about-hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2rem, 5vw, 2.8rem);
-    line-height: 1.15;
-    margin-bottom: 1rem;
-    position: relative;
-  }
-  .about-hero p {
-    font-size: 1rem;
-    line-height: 1.7;
-    opacity: 0.88;
-    max-width: 620px;
-    position: relative;
-  }
-  .about-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.2rem;
-    margin-bottom: 2rem;
-  }
-  .info-card {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    box-shadow: var(--shadow);
-  }
-  .info-card-icon {
-    width: 42px; height: 42px;
-    background: var(--green-pale);
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-  }
+  .about-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem,5vw,2.8rem); line-height: 1.15; margin-bottom: 1rem; }
+  .about-hero p { font-size: 1rem; line-height: 1.7; opacity: 0.88; max-width: 620px; }
+
+  .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-bottom: 2rem; }
+  .info-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+  .info-card-icon { width:42px; height:42px; background:var(--green-pale); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; margin-bottom:1rem; }
   .info-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem; }
   .info-card p { font-size: 0.87rem; color: var(--muted); line-height: 1.6; }
 
-  .pilot-cities {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 2rem;
-    box-shadow: var(--shadow);
-  }
+  .pilot-cities { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); }
   .pilot-cities h2 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; margin-bottom: 1.2rem; }
   .cities-row { display: flex; flex-wrap: wrap; gap: 0.7rem; }
-  .city-chip {
-    background: var(--green-pale);
-    color: var(--green);
-    font-size: 0.85rem;
-    font-weight: 600;
-    padding: 6px 16px;
-    border-radius: 100px;
-    border: 1px solid rgba(82,183,136,0.3);
-  }
+  .city-chip { background: var(--green-pale); color: var(--green); font-size: 0.85rem; font-weight: 600; padding: 6px 16px; border-radius: 100px; border: 1px solid rgba(82,183,136,0.3); }
   .city-chip.highlight { background: var(--green); color: white; }
 
-  /* ── IDEA PANELS ── */
-  .idea-header {
-    border-radius: var(--radius);
-    padding: 2.5rem 2.5rem 2rem;
-    margin-bottom: 2rem;
-    color: white;
-    position: relative;
-    overflow: hidden;
-  }
+  .idea-header { border-radius: var(--radius); padding: 2.5rem 2.5rem 2rem; margin-bottom: 2rem; color: white; position: relative; overflow: hidden; }
   .idea-header.citizen { background: linear-gradient(135deg, #1D6A8A 0%, #0D4F6B 100%); }
   .idea-header.dss { background: linear-gradient(135deg, #6B3E8A 0%, #4A2066 100%); }
   .idea-header.access { background: linear-gradient(135deg, #2D6A4F 0%, #1B4332 100%); }
   .idea-header h2 { font-family: 'DM Serif Display', serif; font-size: 1.8rem; margin-bottom: 0.6rem; }
   .idea-header p { opacity: 0.88; font-size: 0.95rem; line-height: 1.7; max-width: 600px; }
-  .idea-icon {
-    position: absolute;
-    right: 2rem; top: 50%;
-    transform: translateY(-50%);
-    font-size: 5rem;
-    opacity: 0.15;
-  }
+  .idea-icon { position:absolute; right:2rem; top:50%; transform:translateY(-50%); font-size:5rem; opacity:0.15; }
 
-  /* ── BRAINSTORM AREA ── */
-  .brainstorm-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
+  .brainstorm-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   @media (max-width: 700px) { .brainstorm-layout { grid-template-columns: 1fr; } }
 
-  .submit-box {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.8rem;
-    box-shadow: var(--shadow);
-  }
+  .submit-box { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.8rem; box-shadow: var(--shadow); }
   .submit-box h3 { font-size: 1rem; font-weight: 600; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 8px; }
-  .submit-box h3 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green-light); display: inline-block; }
+  .dot { width:8px; height:8px; border-radius:50%; display:inline-block; }
 
   label { display: block; font-size: 0.83rem; font-weight: 600; color: var(--mid); margin-bottom: 0.4rem; }
-  input[type="text"], textarea, select {
-    width: 100%;
-    border: 1.5px solid var(--border);
-    border-radius: 8px;
-    padding: 0.7rem 0.9rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
-    color: var(--dark);
-    background: var(--bg);
-    transition: border-color 0.15s;
-    margin-bottom: 1rem;
-    outline: none;
+  input[type="text"], textarea {
+    width: 100%; border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 0.7rem 0.9rem; font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+    color: var(--dark); background: var(--bg); transition: border-color 0.15s; margin-bottom: 1rem; outline: none;
   }
-  input[type="text"]:focus, textarea:focus, select:focus { border-color: var(--green-light); background: white; }
+  input[type="text"]:focus, textarea:focus { border-color: var(--green-light); background: white; }
   textarea { resize: vertical; min-height: 120px; }
 
   .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1rem; }
   .tag-option {
-    border: 1.5px solid var(--border);
-    border-radius: 100px;
-    padding: 4px 12px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: all 0.15s;
-    background: white;
-    color: var(--mid);
-    font-family: 'DM Sans', sans-serif;
+    border: 1.5px solid var(--border); border-radius: 100px; padding: 4px 12px;
+    font-size: 0.8rem; cursor: pointer; transition: all 0.15s; background: white;
+    color: var(--mid); font-family: 'DM Sans', sans-serif;
   }
   .tag-option.selected { border-color: var(--green); background: var(--green-pale); color: var(--green); font-weight: 600; }
 
   .submit-btn {
-    width: 100%;
-    background: var(--green);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 0.85rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.15s, transform 0.1s;
-    letter-spacing: 0.01em;
+    width: 100%; background: var(--green); color: white; border: none; border-radius: 8px;
+    padding: 0.85rem; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600;
+    cursor: pointer; transition: background 0.15s, transform 0.1s;
   }
   .submit-btn:hover { background: #235c41; }
   .submit-btn:active { transform: scale(0.99); }
+  .submit-btn:disabled { background: #9CA3AF; cursor: not-allowed; }
   .submit-btn.citizen-btn { background: #1D6A8A; } .submit-btn.citizen-btn:hover { background: #145472; }
   .submit-btn.dss-btn { background: #6B3E8A; } .submit-btn.dss-btn:hover { background: #562f70; }
 
-  /* ── IDEAS WALL ── */
-  .ideas-wall {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.8rem;
-    box-shadow: var(--shadow);
-  }
+  .ideas-wall { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.8rem; box-shadow: var(--shadow); }
   .ideas-wall h3 { font-size: 1rem; font-weight: 600; margin-bottom: 1.2rem; color: var(--mid); }
   .idea-cards { display: flex; flex-direction: column; gap: 0.8rem; max-height: 480px; overflow-y: auto; }
-  .idea-card {
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1rem 1.1rem;
-    background: var(--bg);
-    animation: slideIn 0.25s ease;
-  }
-  @keyframes slideIn { from { opacity: 0; transform: translateX(8px); } to { opacity: 1; transform: translateX(0); } }
-  .idea-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.4rem; }
+  .idea-card { border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.1rem; background: var(--bg); animation: slideIn 0.25s ease; }
+  @keyframes slideIn { from { opacity:0; transform:translateX(8px); } to { opacity:1; transform:translateX(0); } }
+  .idea-card-top { display:flex; justify-content:space-between; align-items:flex-start; gap:0.5rem; margin-bottom:0.4rem; }
   .idea-card-name { font-weight: 600; font-size: 0.88rem; }
-  .idea-card-tag { font-size: 0.73rem; font-weight: 600; padding: 2px 9px; border-radius: 100px; white-space: nowrap; }
-  .idea-card-tag.feature { background: #DBEAFE; color: #1D4ED8; }
-  .idea-card-tag.concern { background: #FEF3C7; color: #92400E; }
-  .idea-card-tag.idea { background: var(--green-pale); color: var(--green); }
-  .idea-card-tag.question { background: #F3E8FF; color: #6B21A8; }
-  .idea-card-text { font-size: 0.88rem; color: var(--mid); line-height: 1.55; }
-  .idea-card-time { font-size: 0.75rem; color: #9CA3AF; margin-top: 0.4rem; }
-  .empty-state { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.9rem; }
-  .empty-state .empty-icon { font-size: 2.5rem; margin-bottom: 0.7rem; }
+  .idea-card-tag { font-size:0.73rem; font-weight:600; padding:2px 9px; border-radius:100px; white-space:nowrap; }
+  .idea-card-tag.feature { background:#DBEAFE; color:#1D4ED8; }
+  .idea-card-tag.concern { background:#FEF3C7; color:#92400E; }
+  .idea-card-tag.idea { background:var(--green-pale); color:var(--green); }
+  .idea-card-tag.question { background:#F3E8FF; color:#6B21A8; }
+  .idea-card-text { font-size:0.88rem; color:var(--mid); line-height:1.55; }
+  .idea-card-time { font-size:0.75rem; color:#9CA3AF; margin-top:0.4rem; }
+
+  .empty-state { text-align:center; padding:2rem; color:var(--muted); font-size:0.9rem; }
+  .empty-icon { font-size:2.5rem; margin-bottom:0.7rem; }
+
+  .loading-state { text-align:center; padding:2rem; color:var(--muted); font-size:0.9rem; }
 
   .success-toast {
-    position: fixed;
-    bottom: 2rem; right: 2rem;
-    background: var(--green);
-    color: white;
-    padding: 0.9rem 1.5rem;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    font-weight: 500;
+    position: fixed; bottom: 2rem; right: 2rem;
+    background: var(--green); color: white;
+    padding: 0.9rem 1.5rem; border-radius: 10px;
+    font-size: 0.9rem; font-weight: 500;
     box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-    z-index: 999;
-    transform: translateY(80px);
-    opacity: 0;
-    transition: all 0.3s ease;
+    z-index: 999; transform: translateY(80px); opacity: 0; transition: all 0.3s ease;
   }
   .success-toast.show { transform: translateY(0); opacity: 1; }
 
-  .prompt-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 1rem;
-  }
+  .prompt-chips { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:1rem; }
   .prompt-chip {
-    font-size: 0.78rem;
-    padding: 4px 10px;
-    border-radius: 6px;
-    background: var(--green-pale);
-    color: var(--green);
-    cursor: pointer;
-    border: 1px solid transparent;
-    transition: all 0.15s;
-    font-family: 'DM Sans', sans-serif;
+    font-size:0.78rem; padding:4px 10px; border-radius:6px;
+    background:var(--green-pale); color:var(--green); cursor:pointer;
+    border:1px solid transparent; transition:all 0.15s; font-family:'DM Sans',sans-serif;
   }
-  .prompt-chip:hover { border-color: var(--green-light); background: white; }
+  .prompt-chip:hover { border-color:var(--green-light); background:white; }
 
   .counter-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--gold);
-    color: var(--dark);
-    font-size: 0.72rem;
-    font-weight: 700;
-    min-width: 22px;
-    height: 22px;
-    border-radius: 100px;
-    padding: 0 6px;
-    margin-left: 6px;
+    display:inline-flex; align-items:center; justify-content:center;
+    background:var(--gold); color:var(--dark); font-size:0.72rem; font-weight:700;
+    min-width:22px; height:22px; border-radius:100px; padding:0 6px; margin-left:6px;
   }
 
-  /* Responsive nav */
+  .status-bar {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem;
+  }
+  .status-dot { width:7px; height:7px; border-radius:50%; background:#9CA3AF; }
+  .status-dot.connected { background: #22C55E; }
+  .status-dot.error { background: #EF4444; }
+
   @media (max-width: 700px) {
     header { padding: 0 1rem; }
     .header-inner { flex-direction: column; height: auto; padding: 1rem 0; gap: 0.8rem; }
@@ -400,14 +242,13 @@
 
 <main>
 
-  <!-- ── TAB 1: ABOUT ── -->
+  <!-- TAB 1: ABOUT -->
   <div id="tab-about" class="panel active">
     <div class="about-hero">
       <div class="about-tag">EU DUT 2023 – Partner 12 (ZHAW)</div>
       <h1>Building the Future of Urban Mobility</h1>
       <p>SmartUrbanity is a European initiative transforming cities into 15-minute places — where daily needs are reachable within a short walk or cycle. We put citizens at the heart of urban planning through digital tools and community engagement.</p>
     </div>
-
     <div class="about-grid">
       <div class="info-card">
         <div class="info-card-icon">🎯</div>
@@ -430,7 +271,6 @@
         <p>The toolkit includes a Citizen Engagement App, an Accessibility Analysis Platform, and a Decision Support System for evidence-based policymaking.</p>
       </div>
     </div>
-
     <div class="pilot-cities">
       <h2>Pilot Cities</h2>
       <div class="cities-row">
@@ -441,16 +281,17 @@
         <span class="city-chip highlight">🇨🇭 Thurgau (ZHAW)</span>
       </div>
     </div>
-
     <br>
     <div class="pilot-cities">
       <h2>Share Your Ideas</h2>
-      <p style="color:var(--muted); font-size:0.92rem; line-height:1.7;">This workshop is your chance to shape SmartUrbanity's tools. Use the tabs above to explore each of the three platforms and share your ideas, concerns, and suggestions. Every submission is read by the project team at ZHAW.<br><br>
-      <strong>Click a tab above to get started →</strong></p>
+      <p style="color:var(--muted); font-size:0.92rem; line-height:1.7;">
+        This workshop is your chance to shape SmartUrbanity's tools. Use the tabs above to explore each of the three platforms and share your ideas, concerns, and suggestions. All submissions are visible to everyone and saved for the project team at ZHAW.<br><br>
+        <strong>Click a tab above to get started →</strong>
+      </p>
     </div>
   </div>
 
-  <!-- ── TAB 2: CITIZEN ENGAGEMENT APP ── -->
+  <!-- TAB 2: CITIZEN APP -->
   <div id="tab-citizen" class="panel">
     <div class="idea-header citizen">
       <div class="about-tag" style="background:rgba(255,255,255,0.2); color:white;">Brainstorming Session</div>
@@ -461,7 +302,7 @@
     <div class="brainstorm-layout">
       <div class="submit-box">
         <h3><span class="dot" style="background:#38BDF8;"></span> Submit Your Idea</h3>
-        <p style="font-size:0.83rem; color:var(--muted); margin-bottom:1rem;">What features or improvements would make this app more useful for citizens?</p>
+        <div class="status-bar"><span class="status-dot" id="citizen-status-dot"></span><span id="citizen-status-text">Connecting...</span></div>
         <div>
           <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.5rem; font-weight:600;">💡 INSPIRATION PROMPTS</p>
           <div class="prompt-chips">
@@ -476,24 +317,22 @@
         <label>Category</label>
         <div class="tag-row" id="citizen-tags">
           <span class="tag-option selected" data-val="idea">💡 Idea</span>
-          <span class="tag-option" data-val="feature">⭐ Feature request</span>
+          <span class="tag-option" data-val="feature">⭐ Feature</span>
           <span class="tag-option" data-val="concern">⚠️ Concern</span>
           <span class="tag-option" data-val="question">❓ Question</span>
         </div>
         <label>Your idea or comment</label>
         <textarea id="citizen-text" placeholder="Write your idea here... No idea is too small or too big!"></textarea>
-        <button class="submit-btn citizen-btn" onclick="submitIdea('citizen')">Submit Idea →</button>
+        <button class="submit-btn citizen-btn" id="citizen-submit" onclick="submitIdea('citizen')">Submit Idea →</button>
       </div>
       <div class="ideas-wall">
         <h3>Ideas shared so far <span class="counter-badge" id="citizen-count">0</span></h3>
-        <div class="idea-cards" id="citizen-wall">
-          <div class="empty-state"><div class="empty-icon">💬</div>No ideas yet — be the first!</div>
-        </div>
+        <div class="idea-cards" id="citizen-wall"><div class="loading-state">⏳ Loading ideas...</div></div>
       </div>
     </div>
   </div>
 
-  <!-- ── TAB 3: DSS ── -->
+  <!-- TAB 3: DSS -->
   <div id="tab-dss" class="panel">
     <div class="idea-header dss">
       <div class="about-tag" style="background:rgba(255,255,255,0.2); color:white;">Brainstorming Session</div>
@@ -504,7 +343,7 @@
     <div class="brainstorm-layout">
       <div class="submit-box">
         <h3><span class="dot" style="background:#A78BFA;"></span> Submit Your Idea</h3>
-        <p style="font-size:0.83rem; color:var(--muted); margin-bottom:1rem;">What information or tools do decision-makers need most from this system?</p>
+        <div class="status-bar"><span class="status-dot" id="dss-status-dot"></span><span id="dss-status-text">Connecting...</span></div>
         <div>
           <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.5rem; font-weight:600;">💡 INSPIRATION PROMPTS</p>
           <div class="prompt-chips">
@@ -519,24 +358,22 @@
         <label>Category</label>
         <div class="tag-row" id="dss-tags">
           <span class="tag-option selected" data-val="idea">💡 Idea</span>
-          <span class="tag-option" data-val="feature">⭐ Feature request</span>
+          <span class="tag-option" data-val="feature">⭐ Feature</span>
           <span class="tag-option" data-val="concern">⚠️ Concern</span>
           <span class="tag-option" data-val="question">❓ Question</span>
         </div>
         <label>Your idea or comment</label>
         <textarea id="dss-text" placeholder="Write your idea here..."></textarea>
-        <button class="submit-btn dss-btn" onclick="submitIdea('dss')">Submit Idea →</button>
+        <button class="submit-btn dss-btn" id="dss-submit" onclick="submitIdea('dss')">Submit Idea →</button>
       </div>
       <div class="ideas-wall">
         <h3>Ideas shared so far <span class="counter-badge" id="dss-count">0</span></h3>
-        <div class="idea-cards" id="dss-wall">
-          <div class="empty-state"><div class="empty-icon">💬</div>No ideas yet — be the first!</div>
-        </div>
+        <div class="idea-cards" id="dss-wall"><div class="loading-state">⏳ Loading ideas...</div></div>
       </div>
     </div>
   </div>
 
-  <!-- ── TAB 4: ACCESSIBILITY ── -->
+  <!-- TAB 4: ACCESSIBILITY -->
   <div id="tab-access" class="panel">
     <div class="idea-header access">
       <div class="about-tag" style="background:rgba(255,255,255,0.2); color:white;">Brainstorming Session</div>
@@ -547,7 +384,7 @@
     <div class="brainstorm-layout">
       <div class="submit-box">
         <h3><span class="dot" style="background:var(--green-light);"></span> Submit Your Idea</h3>
-        <p style="font-size:0.83rem; color:var(--muted); margin-bottom:1rem;">How should we visualize and analyze accessibility in your area?</p>
+        <div class="status-bar"><span class="status-dot" id="access-status-dot"></span><span id="access-status-text">Connecting...</span></div>
         <div>
           <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.5rem; font-weight:600;">💡 INSPIRATION PROMPTS</p>
           <div class="prompt-chips">
@@ -562,19 +399,17 @@
         <label>Category</label>
         <div class="tag-row" id="access-tags">
           <span class="tag-option selected" data-val="idea">💡 Idea</span>
-          <span class="tag-option" data-val="feature">⭐ Feature request</span>
+          <span class="tag-option" data-val="feature">⭐ Feature</span>
           <span class="tag-option" data-val="concern">⚠️ Concern</span>
           <span class="tag-option" data-val="question">❓ Question</span>
         </div>
         <label>Your idea or comment</label>
         <textarea id="access-text" placeholder="Write your idea here..."></textarea>
-        <button class="submit-btn" onclick="submitIdea('access')">Submit Idea →</button>
+        <button class="submit-btn" id="access-submit" onclick="submitIdea('access')">Submit Idea →</button>
       </div>
       <div class="ideas-wall">
         <h3>Ideas shared so far <span class="counter-badge" id="access-count">0</span></h3>
-        <div class="idea-cards" id="access-wall">
-          <div class="empty-state"><div class="empty-icon">💬</div>No ideas yet — be the first!</div>
-        </div>
+        <div class="idea-cards" id="access-wall"><div class="loading-state">⏳ Loading ideas...</div></div>
       </div>
     </div>
   </div>
@@ -583,17 +418,32 @@
 
 <div class="success-toast" id="toast">✅ Your idea has been submitted! Thank you.</div>
 
-<script>
-  // ── STATE ──
-  const ideas = { citizen: [], dss: [], access: [] };
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, serverTimestamp }
+    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBNfMRTa3ssqgHQgYoZjMkgt2EDRFwFCH8",
+    authDomain: "smarturbanity-workshop.firebaseapp.com",
+    projectId: "smarturbanity-workshop",
+    storageBucket: "smarturbanity-workshop.firebasestorage.app",
+    messagingSenderId: "459481021725",
+    appId: "1:459481021725:web:1d0abf27ac913297a8f5f4",
+    measurementId: "G-EFPCX9FWNL"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
 
   // ── TABS ──
-  function switchTab(name, btn) {
+  window.switchTab = function(name, btn) {
     document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('tab-' + name).classList.add('active');
     btn.classList.add('active');
-  }
+  };
 
   // ── TAG SELECTION ──
   document.querySelectorAll('.tag-row').forEach(row => {
@@ -606,71 +456,114 @@
   });
 
   // ── PROMPT FILL ──
-  function fillPrompt(tab, text) {
+  window.fillPrompt = function(tab, text) {
     document.getElementById(tab + '-text').value = text;
     document.getElementById(tab + '-text').focus();
+  };
+
+  // ── HELPERS ──
+  function escHtml(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+  function tagLabel(t) {
+    return { idea:'💡 Idea', feature:'⭐ Feature', concern:'⚠️ Concern', question:'❓ Question' }[t] || t;
+  }
+  function setStatus(tab, connected) {
+    const dot = document.getElementById(tab + '-status-dot');
+    const txt = document.getElementById(tab + '-status-text');
+    if (connected) {
+      dot.className = 'status-dot connected';
+      txt.textContent = 'Live — ideas saved in real time';
+    } else {
+      dot.className = 'status-dot error';
+      txt.textContent = 'Connection error — try refreshing';
+    }
+  }
+  function showToast() {
+    const t = document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3000);
   }
 
-  // ── SUBMIT ──
-  function submitIdea(tab) {
-    const nameEl = document.getElementById(tab + '-name');
-    const textEl = document.getElementById(tab + '-text');
-    const tagEl = document.querySelector('#' + tab + '-tags .tag-option.selected');
-
-    const text = textEl.value.trim();
-    if (!text) { textEl.style.borderColor = '#EF4444'; textEl.focus(); return; }
-    textEl.style.borderColor = '';
-
-    const idea = {
-      name: nameEl.value.trim() || 'Anonymous',
-      text,
-      tag: tagEl ? tagEl.dataset.val : 'idea',
-      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-    };
-
-    ideas[tab].unshift(idea);
-    renderWall(tab);
-    nameEl.value = '';
-    textEl.value = '';
-    showToast();
-  }
-
-  // ── RENDER IDEAS ──
-  function renderWall(tab) {
+  // ── RENDER WALL ──
+  function renderWall(tab, ideas) {
     const wall = document.getElementById(tab + '-wall');
     const count = document.getElementById(tab + '-count');
-    count.textContent = ideas[tab].length;
-
-    if (ideas[tab].length === 0) {
+    count.textContent = ideas.length;
+    if (ideas.length === 0) {
       wall.innerHTML = '<div class="empty-state"><div class="empty-icon">💬</div>No ideas yet — be the first!</div>';
       return;
     }
-    wall.innerHTML = ideas[tab].map(idea => `
+    wall.innerHTML = ideas.map(idea => `
       <div class="idea-card">
         <div class="idea-card-top">
           <span class="idea-card-name">👤 ${escHtml(idea.name)}</span>
           <span class="idea-card-tag ${idea.tag}">${tagLabel(idea.tag)}</span>
         </div>
         <div class="idea-card-text">${escHtml(idea.text)}</div>
-        <div class="idea-card-time">Submitted at ${idea.time}</div>
+        <div class="idea-card-time">${idea.timeStr}</div>
       </div>
     `).join('');
   }
 
-  function tagLabel(t) {
-    return { idea: '💡 Idea', feature: '⭐ Feature', concern: '⚠️ Concern', question: '❓ Question' }[t] || t;
+  // ── REAL-TIME LISTENERS ──
+  function listenToCollection(tab) {
+    const q = query(collection(db, tab + '-ideas'), orderBy('createdAt', 'desc'));
+    onSnapshot(q, (snapshot) => {
+      setStatus(tab, true);
+      const ideas = snapshot.docs.map(doc => {
+        const d = doc.data();
+        const ts = d.createdAt ? d.createdAt.toDate() : new Date();
+        return {
+          name: d.name || 'Anonymous',
+          text: d.text,
+          tag: d.tag || 'idea',
+          timeStr: ts.toLocaleDateString('en-GB', { day:'numeric', month:'short', hour:'2-digit', minute:'2-digit' })
+        };
+      });
+      renderWall(tab, ideas);
+    }, (error) => {
+      console.error(error);
+      setStatus(tab, false);
+    });
   }
 
-  function escHtml(s) {
-    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  }
+  listenToCollection('citizen');
+  listenToCollection('dss');
+  listenToCollection('access');
 
-  // ── TOAST ──
-  function showToast() {
-    const t = document.getElementById('toast');
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 3000);
-  }
+  // ── SUBMIT ──
+  window.submitIdea = async function(tab) {
+    const nameEl = document.getElementById(tab + '-name');
+    const textEl = document.getElementById(tab + '-text');
+    const tagEl  = document.querySelector('#' + tab + '-tags .tag-option.selected');
+    const btn    = document.getElementById(tab + '-submit');
+
+    const text = textEl.value.trim();
+    if (!text) { textEl.style.borderColor = '#EF4444'; textEl.focus(); return; }
+    textEl.style.borderColor = '';
+
+    btn.disabled = true;
+    btn.textContent = 'Saving...';
+
+    try {
+      await addDoc(collection(db, tab + '-ideas'), {
+        name: nameEl.value.trim() || 'Anonymous',
+        text: text,
+        tag: tagEl ? tagEl.dataset.val : 'idea',
+        createdAt: serverTimestamp()
+      });
+      nameEl.value = '';
+      textEl.value = '';
+      showToast();
+    } catch (e) {
+      console.error(e);
+      alert('Error saving idea. Please try again.');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Submit Idea →';
+    }
+  };
 </script>
 </body>
 </html>
