@@ -15,13 +15,20 @@
   body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--dark);min-height:100vh;}
 
   header{background:var(--green);color:white;padding:0 2rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,0.18);}
-  .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;height:68px;justify-content:space-between;}
+  .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:1rem;height:68px;justify-content:space-between;}
   .logo-area{display:flex;align-items:center;gap:12px;flex-shrink:0;}
   .logo-img{width:44px;height:44px;object-fit:contain;border-radius:8px;background:white;padding:3px;flex-shrink:0;}
   .logo-text{font-size:1.1rem;font-weight:600;} .logo-sub{font-size:0.72rem;opacity:0.75;margin-top:1px;}
+  .header-right{display:flex;align-items:center;gap:0.5rem;}
   nav{display:flex;gap:2px;align-items:center;}
-  .tab-btn{background:transparent;border:none;color:rgba(255,255,255,0.72);font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:500;padding:0.5rem 1rem;border-radius:8px;cursor:pointer;transition:all 0.18s;white-space:nowrap;}
+  .tab-btn{background:transparent;border:none;color:rgba(255,255,255,0.72);font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:500;padding:0.5rem 0.8rem;border-radius:8px;cursor:pointer;transition:all 0.18s;white-space:nowrap;}
   .tab-btn:hover{background:rgba(255,255,255,0.12);color:white;} .tab-btn.active{background:rgba(255,255,255,0.18);color:white;font-weight:600;}
+
+  /* Language switcher */
+  .lang-switcher{display:flex;gap:2px;background:rgba(0,0,0,0.2);border-radius:8px;padding:3px;flex-shrink:0;}
+  .lang-btn{background:transparent;border:none;color:rgba(255,255,255,0.65);font-family:'DM Sans',sans-serif;font-size:0.75rem;font-weight:600;padding:4px 8px;border-radius:6px;cursor:pointer;transition:all 0.15s;letter-spacing:0.03em;}
+  .lang-btn:hover{color:white;background:rgba(255,255,255,0.1);}
+  .lang-btn.active{background:white;color:var(--green);}
 
   main{max-width:1100px;margin:0 auto;padding:2.5rem 2rem 4rem;}
   .panel{display:none;animation:fadeIn 0.3s ease;} .panel.active{display:block;}
@@ -31,19 +38,16 @@
   .about-tag{display:inline-block;background:var(--gold);color:var(--dark);font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:1.2rem;}
   .about-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,5vw,2.8rem);line-height:1.15;margin-bottom:1rem;}
   .about-hero p{font-size:1rem;line-height:1.7;opacity:0.88;max-width:620px;}
-
   .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-bottom:2rem;}
   .info-card{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;box-shadow:var(--shadow);}
   .info-card-icon{width:42px;height:42px;background:var(--green-pale);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1rem;}
   .info-card-img{width:42px;height:42px;object-fit:contain;margin-bottom:1rem;border-radius:8px;}
   .info-card h3{font-size:0.95rem;font-weight:600;margin-bottom:0.4rem;} .info-card p{font-size:0.87rem;color:var(--muted);line-height:1.6;}
-
   .pilot-cities{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:2rem;box-shadow:var(--shadow);}
   .pilot-cities h2{font-family:'DM Serif Display',serif;font-size:1.4rem;margin-bottom:1.2rem;}
   .cities-row{display:flex;flex-wrap:wrap;gap:0.7rem;}
   .city-chip{background:var(--green-pale);color:var(--green);font-size:0.85rem;font-weight:600;padding:6px 16px;border-radius:100px;border:1px solid rgba(82,183,136,0.3);}
   .city-chip.highlight{background:var(--green);color:white;}
-
   .dut-banner{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem 2rem;box-shadow:var(--shadow);margin-top:1.5rem;display:flex;align-items:center;justify-content:center;}
   .dut-banner img{max-height:65px;object-fit:contain;}
 
@@ -61,7 +65,6 @@
   .dot{width:8px;height:8px;border-radius:50%;display:inline-block;}
   .status-bar{display:flex;align-items:center;gap:6px;font-size:0.78rem;color:var(--muted);margin-bottom:1rem;}
   .status-dot{width:7px;height:7px;border-radius:50%;background:#9CA3AF;} .status-dot.connected{background:#22C55E;} .status-dot.error{background:#EF4444;}
-
   label{display:block;font-size:0.83rem;font-weight:600;color:var(--mid);margin-bottom:0.4rem;}
   input[type="text"],textarea{width:100%;border:1.5px solid var(--border);border-radius:8px;padding:0.7rem 0.9rem;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--dark);background:var(--bg);transition:border-color 0.15s;margin-bottom:1rem;outline:none;}
   input[type="text"]:focus,textarea:focus{border-color:var(--green-light);background:white;}
@@ -76,7 +79,6 @@
   .prompt-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem;}
   .prompt-chip{font-size:0.78rem;padding:4px 10px;border-radius:6px;background:var(--green-pale);color:var(--green);cursor:pointer;border:1px solid transparent;transition:all 0.15s;font-family:'DM Sans',sans-serif;}
   .prompt-chip:hover{border-color:var(--green-light);background:white;}
-
   .ideas-wall{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:1.8rem;box-shadow:var(--shadow);}
   .ideas-wall h3{font-size:1rem;font-weight:600;margin-bottom:1.2rem;color:var(--mid);}
   .counter-badge{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:var(--dark);font-size:0.72rem;font-weight:700;min-width:22px;height:22px;border-radius:100px;padding:0 6px;margin-left:6px;}
@@ -111,9 +113,12 @@
   .modal-save:hover{background:#235c41;}
   .success-toast{position:fixed;bottom:2rem;right:2rem;background:var(--green);color:white;padding:0.9rem 1.5rem;border-radius:10px;font-size:0.9rem;font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,0.18);z-index:999;transform:translateY(80px);opacity:0;transition:all 0.3s ease;}
   .success-toast.show{transform:translateY(0);opacity:1;}
-  @media(max-width:700px){
-    header{padding:0 1rem;} .header-inner{flex-direction:column;height:auto;padding:1rem 0;gap:0.8rem;}
-    nav{flex-wrap:wrap;justify-content:center;} main{padding:1.5rem 1rem 3rem;}
+  @media(max-width:780px){
+    header{padding:0 1rem;} .header-inner{flex-direction:column;height:auto;padding:0.8rem 0;gap:0.6rem;}
+    .header-right{flex-direction:column;gap:0.4rem;width:100%;}
+    nav{flex-wrap:wrap;justify-content:center;width:100%;}
+    .lang-switcher{justify-content:center;}
+    main{padding:1.5rem 1rem 3rem;}
     .about-hero{padding:2rem 1.5rem;} .idea-header{padding:1.8rem 1.5rem;} .idea-icon{display:none;}
     .brainstorm-layout{grid-template-columns:1fr;}
   }
@@ -125,14 +130,22 @@
   <div class="header-inner">
     <div class="logo-area">
       <img class="logo-img" src="data:image/png;base64,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" alt="SmartUrbanity Logo">
-      <div><div class="logo-text">SmartUrbanity</div><div class="logo-sub">EU DUT Partnership · Ideas Workshop</div></div>
+      <div><div class="logo-text">SmartUrbanity</div><div class="logo-sub" data-i18n="header_sub">EU DUT Partnership · Ideas Workshop</div></div>
     </div>
-    <nav>
-      <button class="tab-btn active" onclick="switchTab('about',this)">🏙️ About</button>
-      <button class="tab-btn" onclick="switchTab('citizen',this)">📱 Citizen App</button>
-      <button class="tab-btn" onclick="switchTab('dss',this)">🧭 DSS Platform</button>
-      <button class="tab-btn" onclick="switchTab('access',this)">🗺️ Accessibility</button>
-    </nav>
+    <div class="header-right">
+      <nav>
+        <button class="tab-btn active" onclick="switchTab('about',this)" data-i18n="nav_about">🏙️ About</button>
+        <button class="tab-btn" onclick="switchTab('citizen',this)" data-i18n="nav_citizen">📱 Citizen App</button>
+        <button class="tab-btn" onclick="switchTab('dss',this)" data-i18n="nav_dss">🧭 DSS Platform</button>
+        <button class="tab-btn" onclick="switchTab('access',this)" data-i18n="nav_access">🗺️ Accessibility</button>
+      </nav>
+      <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('de')">DE</button>
+        <button class="lang-btn" onclick="setLang('fr')">FR</button>
+        <button class="lang-btn" onclick="setLang('it')">IT</button>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -141,33 +154,33 @@
   <div id="tab-about" class="panel active">
     <div class="about-hero">
       <div class="about-tag">EU DUT 2023</div>
-      <h1>Building the Future of Urban Mobility</h1>
-      <p>SmartUrbanity is a European initiative transforming cities into 15-minute places — where daily needs are reachable within a short walk or cycle. We put citizens at the heart of urban planning through digital tools and community engagement.</p>
+      <h1 data-i18n="about_title">Building the Future of Urban Mobility</h1>
+      <p data-i18n="about_subtitle">SmartUrbanity is a European initiative transforming cities into 15-minute places — where daily needs are reachable within a short walk or cycle. We put citizens at the heart of urban planning through digital tools and community engagement.</p>
     </div>
     <div class="about-grid">
       <div class="info-card">
         <div class="info-card-icon">🎯</div>
-        <h3>Our Mission</h3>
-        <p>Enhance urban accessibility, inclusivity, and sustainability by integrating citizens directly into the planning process through a citizen-centric digital framework.</p>
+        <h3 data-i18n="card_mission_title">Our Mission</h3>
+        <p data-i18n="card_mission_text">Enhance urban accessibility, inclusivity, and sustainability by integrating citizens directly into the planning process through a citizen-centric digital framework.</p>
       </div>
       <div class="info-card">
         <div class="info-card-icon">🗓️</div>
-        <h3>Project Timeline</h3>
-        <p>Running from January 2025 to December 2027, with pilot testing across 5 European cities and the Greater Zurich Area.</p>
+        <h3 data-i18n="card_timeline_title">Project Timeline</h3>
+        <p data-i18n="card_timeline_text">Running from January 2025 to December 2027, with pilot testing across 5 European cities and the Greater Zurich Area.</p>
       </div>
       <div class="info-card">
         <img class="info-card-img" src="data:image/png;base64,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" alt="ZHAW">
-        <h3>ZHAW's Role</h3>
-        <p>ZHAW leads WP6 Dissemination and the Thurgau pilot, using MATSim agent-based modeling for DRT-PT integration with PostAuto AG.</p>
+        <h3 data-i18n="card_zhaw_title">ZHAW's Role</h3>
+        <p data-i18n="card_zhaw_text">ZHAW leads WP6 Dissemination and the Thurgau pilot, using MATSim agent-based modeling for DRT-PT integration with PostAuto AG.</p>
       </div>
       <div class="info-card">
         <div class="info-card-icon">💡</div>
-        <h3>Three Digital Tools</h3>
-        <p>The toolkit includes a Citizen Engagement App, an Accessibility Analysis Platform, and a Decision Support System for evidence-based policymaking.</p>
+        <h3 data-i18n="card_tools_title">Three Digital Tools</h3>
+        <p data-i18n="card_tools_text">The toolkit includes a Citizen Engagement App, an Accessibility Analysis Platform, and a Decision Support System for evidence-based policymaking.</p>
       </div>
     </div>
     <div class="pilot-cities">
-      <h2>Pilot Cities</h2>
+      <h2 data-i18n="pilot_title">Pilot Cities</h2>
       <div class="cities-row">
         <span class="city-chip">🇮🇹 Rome</span>
         <span class="city-chip">🇩🇪 Karlsruhe</span>
@@ -177,53 +190,44 @@
       </div>
     </div>
     <div class="pilot-cities" style="margin-top:1.5rem;">
-      <h2>Share Your Ideas</h2>
-      <p style="color:var(--muted);font-size:0.92rem;line-height:1.7;">
-        This workshop is your chance to shape SmartUrbanity's tools. Use the tabs above to share your ideas — they are saved permanently and visible to everyone.<br><br>
-        💡 <strong>Tip:</strong> After submitting, you can <strong>edit or delete your own ideas</strong> using the buttons on your submissions. Your ideas are linked to your browser.<br><br>
-        <strong>Click a tab above to get started →</strong>
-      </p>
+      <h2 data-i18n="share_title">Share Your Ideas</h2>
+      <p data-i18n="share_text" style="color:var(--muted);font-size:0.92rem;line-height:1.7;">This workshop is your chance to shape SmartUrbanity's tools. Use the tabs above to share your ideas — they are saved permanently and visible to everyone.<br><br>💡 <strong>Tip:</strong> After submitting, you can <strong>edit or delete your own ideas</strong> using the buttons on your submissions.<br><br><strong>Click a tab above to get started →</strong></p>
     </div>
     <div class="dut-banner">
-      <img src="data:image/png;base64,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" alt="DUT – Driving Urban Transitions, Co-funded by the European Union">
+      <img src="data:image/png;base64,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" alt="DUT – Co-funded by the European Union">
     </div>
   </div>
 
   <!-- CITIZEN APP -->
   <div id="tab-citizen" class="panel">
     <div class="idea-header citizen">
-      <div class="about-tag" style="background:rgba(255,255,255,0.2);color:white;">Brainstorming Session</div>
-      <h2>Citizen Engagement App</h2>
-      <p>A mobile app that brings citizens into the urban planning process. Users can report issues, track daily trips, share insights on safety and accessibility, and contribute to a data-rich understanding of mobility.</p>
+      <div class="about-tag" style="background:rgba(255,255,255,0.2);color:white;" data-i18n="session_tag">Brainstorming Session</div>
+      <h2 data-i18n="citizen_title">Citizen Engagement App</h2>
+      <p data-i18n="citizen_desc">A mobile app that brings citizens into the urban planning process. Users can report issues, track daily trips, share insights on safety and accessibility, and contribute to a data-rich understanding of mobility.</p>
       <div class="idea-icon">📱</div>
     </div>
     <div class="brainstorm-layout">
       <div class="submit-box">
-        <h3><span class="dot" style="background:#38BDF8;"></span> Submit Your Idea</h3>
-        <div class="status-bar"><span class="status-dot" id="citizen-sd"></span><span id="citizen-st">Connecting...</span></div>
-        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem;font-weight:600;">💡 PROMPTS</p>
-        <div class="prompt-chips">
-          <span class="prompt-chip" onclick="fillPrompt('citizen','I would use the app more if it had...')">I'd use it more if...</span>
-          <span class="prompt-chip" onclick="fillPrompt('citizen','Citizens like me need...')">Citizens need...</span>
-          <span class="prompt-chip" onclick="fillPrompt('citizen','A concern I have is...')">A concern...</span>
-          <span class="prompt-chip" onclick="fillPrompt('citizen','A feature I would love is...')">Feature idea</span>
-        </div>
-        <label>Your Name (optional)</label>
-        <input type="text" id="citizen-name" placeholder="e.g. Maria, Anonymous...">
-        <label>Category</label>
+        <h3><span class="dot" style="background:#38BDF8;"></span> <span data-i18n="submit_title">Submit Your Idea</span></h3>
+        <div class="status-bar"><span class="status-dot" id="citizen-sd"></span><span id="citizen-st" data-i18n="status_connecting">Connecting...</span></div>
+        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem;font-weight:600;" data-i18n="prompts_label">💡 PROMPTS</p>
+        <div class="prompt-chips" id="citizen-prompts"></div>
+        <label data-i18n="name_label">Your Name (optional)</label>
+        <input type="text" id="citizen-name" data-i18n-placeholder="name_placeholder">
+        <label data-i18n="category_label">Category</label>
         <div class="tag-row" id="citizen-tags">
-          <span class="tag-option selected" data-val="idea">💡 Idea</span>
-          <span class="tag-option" data-val="feature">⭐ Feature</span>
-          <span class="tag-option" data-val="concern">⚠️ Concern</span>
-          <span class="tag-option" data-val="question">❓ Question</span>
+          <span class="tag-option selected" data-val="idea" data-i18n="tag_idea">💡 Idea</span>
+          <span class="tag-option" data-val="feature" data-i18n="tag_feature">⭐ Feature</span>
+          <span class="tag-option" data-val="concern" data-i18n="tag_concern">⚠️ Concern</span>
+          <span class="tag-option" data-val="question" data-i18n="tag_question">❓ Question</span>
         </div>
-        <label>Your idea or comment</label>
-        <textarea id="citizen-text" placeholder="Write your idea here..."></textarea>
-        <button class="submit-btn citizen-btn" id="citizen-submit" onclick="submitIdea('citizen')">Submit Idea →</button>
+        <label data-i18n="idea_label">Your idea or comment</label>
+        <textarea id="citizen-text" data-i18n-placeholder="idea_placeholder"></textarea>
+        <button class="submit-btn citizen-btn" id="citizen-submit" onclick="submitIdea('citizen')" data-i18n="submit_btn">Submit Idea →</button>
       </div>
       <div class="ideas-wall">
-        <h3>Ideas shared so far <span class="counter-badge" id="citizen-count">0</span></h3>
-        <div class="idea-cards" id="citizen-wall"><div class="loading-state">⏳ Loading ideas...</div></div>
+        <h3><span data-i18n="wall_title">Ideas shared so far</span> <span class="counter-badge" id="citizen-count">0</span></h3>
+        <div class="idea-cards" id="citizen-wall"><div class="loading-state">⏳ <span data-i18n="loading">Loading ideas...</span></div></div>
       </div>
     </div>
   </div>
@@ -231,38 +235,33 @@
   <!-- DSS -->
   <div id="tab-dss" class="panel">
     <div class="idea-header dss">
-      <div class="about-tag" style="background:rgba(255,255,255,0.2);color:white;">Brainstorming Session</div>
-      <h2>Decision Support System (DSS)</h2>
-      <p>A platform for policymakers to evaluate urban mobility interventions using agent-based models and data from the Citizen Engagement App. It helps assess demographic impacts, costs, equity, and urgency of transport decisions.</p>
+      <div class="about-tag" style="background:rgba(255,255,255,0.2);color:white;" data-i18n="session_tag">Brainstorming Session</div>
+      <h2 data-i18n="dss_title">Decision Support System (DSS)</h2>
+      <p data-i18n="dss_desc">A platform for policymakers to evaluate urban mobility interventions using agent-based models and data from the Citizen Engagement App. It helps assess demographic impacts, costs, equity, and urgency of transport decisions.</p>
       <div class="idea-icon">🧭</div>
     </div>
     <div class="brainstorm-layout">
       <div class="submit-box">
-        <h3><span class="dot" style="background:#A78BFA;"></span> Submit Your Idea</h3>
-        <div class="status-bar"><span class="status-dot" id="dss-sd"></span><span id="dss-st">Connecting...</span></div>
-        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem;font-weight:600;">💡 PROMPTS</p>
-        <div class="prompt-chips">
-          <span class="prompt-chip" onclick="fillPrompt('dss','Policymakers need to see...')">Policymakers need...</span>
-          <span class="prompt-chip" onclick="fillPrompt('dss','A useful scenario to simulate would be...')">Simulate scenario</span>
-          <span class="prompt-chip" onclick="fillPrompt('dss','The data I would need to make decisions is...')">Data needed</span>
-          <span class="prompt-chip" onclick="fillPrompt('dss','A barrier to using this system might be...')">Possible barrier</span>
-        </div>
-        <label>Your Name (optional)</label>
-        <input type="text" id="dss-name" placeholder="e.g. Thomas, Anonymous...">
-        <label>Category</label>
+        <h3><span class="dot" style="background:#A78BFA;"></span> <span data-i18n="submit_title">Submit Your Idea</span></h3>
+        <div class="status-bar"><span class="status-dot" id="dss-sd"></span><span id="dss-st" data-i18n="status_connecting">Connecting...</span></div>
+        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem;font-weight:600;" data-i18n="prompts_label">💡 PROMPTS</p>
+        <div class="prompt-chips" id="dss-prompts"></div>
+        <label data-i18n="name_label">Your Name (optional)</label>
+        <input type="text" id="dss-name" data-i18n-placeholder="name_placeholder">
+        <label data-i18n="category_label">Category</label>
         <div class="tag-row" id="dss-tags">
-          <span class="tag-option selected" data-val="idea">💡 Idea</span>
-          <span class="tag-option" data-val="feature">⭐ Feature</span>
-          <span class="tag-option" data-val="concern">⚠️ Concern</span>
-          <span class="tag-option" data-val="question">❓ Question</span>
+          <span class="tag-option selected" data-val="idea" data-i18n="tag_idea">💡 Idea</span>
+          <span class="tag-option" data-val="feature" data-i18n="tag_feature">⭐ Feature</span>
+          <span class="tag-option" data-val="concern" data-i18n="tag_concern">⚠️ Concern</span>
+          <span class="tag-option" data-val="question" data-i18n="tag_question">❓ Question</span>
         </div>
-        <label>Your idea or comment</label>
-        <textarea id="dss-text" placeholder="Write your idea here..."></textarea>
-        <button class="submit-btn dss-btn" id="dss-submit" onclick="submitIdea('dss')">Submit Idea →</button>
+        <label data-i18n="idea_label">Your idea or comment</label>
+        <textarea id="dss-text" data-i18n-placeholder="idea_placeholder"></textarea>
+        <button class="submit-btn dss-btn" id="dss-submit" onclick="submitIdea('dss')" data-i18n="submit_btn">Submit Idea →</button>
       </div>
       <div class="ideas-wall">
-        <h3>Ideas shared so far <span class="counter-badge" id="dss-count">0</span></h3>
-        <div class="idea-cards" id="dss-wall"><div class="loading-state">⏳ Loading ideas...</div></div>
+        <h3><span data-i18n="wall_title">Ideas shared so far</span> <span class="counter-badge" id="dss-count">0</span></h3>
+        <div class="idea-cards" id="dss-wall"><div class="loading-state">⏳ <span data-i18n="loading">Loading ideas...</span></div></div>
       </div>
     </div>
   </div>
@@ -270,38 +269,33 @@
   <!-- ACCESSIBILITY -->
   <div id="tab-access" class="panel">
     <div class="idea-header access">
-      <div class="about-tag" style="background:rgba(255,255,255,0.2);color:white;">Brainstorming Session</div>
-      <h2>Accessibility Analysis Platform</h2>
-      <p>A WebGIS platform for visualizing accessibility data across communities. Features interactive maps, heatmaps, demographic filters, and community forums for upvoting transport issues and co-creating urban solutions.</p>
+      <div class="about-tag" style="background:rgba(255,255,255,0.2);color:white;" data-i18n="session_tag">Brainstorming Session</div>
+      <h2 data-i18n="access_title">Accessibility Analysis Platform</h2>
+      <p data-i18n="access_desc">A WebGIS platform for visualizing accessibility data across communities. Features interactive maps, heatmaps, demographic filters, and community forums for upvoting transport issues and co-creating urban solutions.</p>
       <div class="idea-icon">🗺️</div>
     </div>
     <div class="brainstorm-layout">
       <div class="submit-box">
-        <h3><span class="dot" style="background:var(--green-light);"></span> Submit Your Idea</h3>
-        <div class="status-bar"><span class="status-dot" id="access-sd"></span><span id="access-st">Connecting...</span></div>
-        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem;font-weight:600;">💡 PROMPTS</p>
-        <div class="prompt-chips">
-          <span class="prompt-chip" onclick="fillPrompt('access','Accessibility is a problem for me because...')">Accessibility gap</span>
-          <span class="prompt-chip" onclick="fillPrompt('access','A map layer I would find useful is...')">Map layer idea</span>
-          <span class="prompt-chip" onclick="fillPrompt('access','Groups that are often overlooked in planning are...')">Who is overlooked?</span>
-          <span class="prompt-chip" onclick="fillPrompt('access','I wish it were easier to reach...')">Reachability</span>
-        </div>
-        <label>Your Name (optional)</label>
-        <input type="text" id="access-name" placeholder="e.g. Sofia, Anonymous...">
-        <label>Category</label>
+        <h3><span class="dot" style="background:var(--green-light);"></span> <span data-i18n="submit_title">Submit Your Idea</span></h3>
+        <div class="status-bar"><span class="status-dot" id="access-sd"></span><span id="access-st" data-i18n="status_connecting">Connecting...</span></div>
+        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem;font-weight:600;" data-i18n="prompts_label">💡 PROMPTS</p>
+        <div class="prompt-chips" id="access-prompts"></div>
+        <label data-i18n="name_label">Your Name (optional)</label>
+        <input type="text" id="access-name" data-i18n-placeholder="name_placeholder">
+        <label data-i18n="category_label">Category</label>
         <div class="tag-row" id="access-tags">
-          <span class="tag-option selected" data-val="idea">💡 Idea</span>
-          <span class="tag-option" data-val="feature">⭐ Feature</span>
-          <span class="tag-option" data-val="concern">⚠️ Concern</span>
-          <span class="tag-option" data-val="question">❓ Question</span>
+          <span class="tag-option selected" data-val="idea" data-i18n="tag_idea">💡 Idea</span>
+          <span class="tag-option" data-val="feature" data-i18n="tag_feature">⭐ Feature</span>
+          <span class="tag-option" data-val="concern" data-i18n="tag_concern">⚠️ Concern</span>
+          <span class="tag-option" data-val="question" data-i18n="tag_question">❓ Question</span>
         </div>
-        <label>Your idea or comment</label>
-        <textarea id="access-text" placeholder="Write your idea here..."></textarea>
-        <button class="submit-btn" id="access-submit" onclick="submitIdea('access')">Submit Idea →</button>
+        <label data-i18n="idea_label">Your idea or comment</label>
+        <textarea id="access-text" data-i18n-placeholder="idea_placeholder"></textarea>
+        <button class="submit-btn" id="access-submit" onclick="submitIdea('access')" data-i18n="submit_btn">Submit Idea →</button>
       </div>
       <div class="ideas-wall">
-        <h3>Ideas shared so far <span class="counter-badge" id="access-count">0</span></h3>
-        <div class="idea-cards" id="access-wall"><div class="loading-state">⏳ Loading ideas...</div></div>
+        <h3><span data-i18n="wall_title">Ideas shared so far</span> <span class="counter-badge" id="access-count">0</span></h3>
+        <div class="idea-cards" id="access-wall"><div class="loading-state">⏳ <span data-i18n="loading">Loading ideas...</span></div></div>
       </div>
     </div>
   </div>
@@ -309,11 +303,11 @@
 
 <div class="modal-overlay" id="edit-modal">
   <div class="modal">
-    <h3>✏️ Edit your idea</h3>
-    <textarea id="edit-textarea" placeholder="Update your idea..."></textarea>
+    <h3 data-i18n="edit_title">✏️ Edit your idea</h3>
+    <textarea id="edit-textarea" data-i18n-placeholder="idea_placeholder"></textarea>
     <div class="modal-btns">
-      <button class="modal-cancel" onclick="closeModal()">Cancel</button>
-      <button class="modal-save" onclick="saveEdit()">Save changes</button>
+      <button class="modal-cancel" onclick="closeModal()" data-i18n="cancel_btn">Cancel</button>
+      <button class="modal-save" onclick="saveEdit()" data-i18n="save_btn">Save changes</button>
     </div>
   </div>
 </div>
@@ -334,16 +328,190 @@
     appId: "1:459481021725:web:1d0abf27ac913297a8f5f4"
   }));
 
-  let sk = localStorage.getItem('su_sk');
-  if (!sk) { sk = 'u_' + Math.random().toString(36).substr(2,14) + '_' + Date.now(); localStorage.setItem('su_sk', sk); }
+  // ── TRANSLATIONS ──
+  const T = {
+    en: {
+      header_sub: "EU DUT Partnership · Ideas Workshop",
+      nav_about: "🏙️ About", nav_citizen: "📱 Citizen App", nav_dss: "🧭 DSS Platform", nav_access: "🗺️ Accessibility",
+      about_title: "Building the Future of Urban Mobility",
+      about_subtitle: "SmartUrbanity is a European initiative transforming cities into 15-minute places — where daily needs are reachable within a short walk or cycle. We put citizens at the heart of urban planning through digital tools and community engagement.",
+      card_mission_title: "Our Mission", card_mission_text: "Enhance urban accessibility, inclusivity, and sustainability by integrating citizens directly into the planning process through a citizen-centric digital framework.",
+      card_timeline_title: "Project Timeline", card_timeline_text: "Running from January 2025 to December 2027, with pilot testing across 5 European cities and the Greater Zurich Area.",
+      card_zhaw_title: "ZHAW's Role", card_zhaw_text: "ZHAW leads WP6 Dissemination and the Thurgau pilot, using MATSim agent-based modeling for DRT-PT integration with PostAuto AG.",
+      card_tools_title: "Three Digital Tools", card_tools_text: "The toolkit includes a Citizen Engagement App, an Accessibility Analysis Platform, and a Decision Support System for evidence-based policymaking.",
+      pilot_title: "Pilot Cities",
+      share_title: "Share Your Ideas",
+      share_text: "This workshop is your chance to shape SmartUrbanity's tools. Use the tabs above to share your ideas — they are saved permanently and visible to everyone.<br><br>💡 <strong>Tip:</strong> After submitting, you can <strong>edit or delete your own ideas</strong> using the buttons on your submissions.<br><br><strong>Click a tab above to get started →</strong>",
+      session_tag: "Brainstorming Session",
+      citizen_title: "Citizen Engagement App", citizen_desc: "A mobile app that brings citizens into the urban planning process. Users can report issues, track daily trips, share insights on safety and accessibility, and contribute to a data-rich understanding of mobility.",
+      dss_title: "Decision Support System (DSS)", dss_desc: "A platform for policymakers to evaluate urban mobility interventions using agent-based models and data from the Citizen Engagement App. It helps assess demographic impacts, costs, equity, and urgency of transport decisions.",
+      access_title: "Accessibility Analysis Platform", access_desc: "A WebGIS platform for visualizing accessibility data across communities. Features interactive maps, heatmaps, demographic filters, and community forums for upvoting transport issues and co-creating urban solutions.",
+      submit_title: "Submit Your Idea", prompts_label: "💡 PROMPTS",
+      name_label: "Your Name (optional)", name_placeholder: "e.g. Maria, Anonymous...",
+      category_label: "Category", idea_label: "Your idea or comment", idea_placeholder: "Write your idea here...",
+      tag_idea: "💡 Idea", tag_feature: "⭐ Feature", tag_concern: "⚠️ Concern", tag_question: "❓ Question",
+      submit_btn: "Submit Idea →", wall_title: "Ideas shared so far",
+      status_connecting: "Connecting...", status_live: "Live — ideas saved in real time", status_error: "Connection error — try refreshing",
+      loading: "Loading ideas...", empty: "No ideas yet — be the first!",
+      mine_label: "· your idea", edit_btn: "✏️ Edit", delete_btn: "🗑️ Delete",
+      edit_title: "✏️ Edit your idea", cancel_btn: "Cancel", save_btn: "Save changes",
+      toast_submit: "✅ Your idea has been submitted! Thank you.", toast_update: "✅ Your idea has been updated!", toast_delete: "🗑️ Your idea has been deleted.",
+      confirm_delete: "Are you sure you want to delete this idea?",
+      citizen_prompts: ["I'd use it more if...|I would use the app more if it had...", "Citizens need...|Citizens like me need...", "A concern...|A concern I have is...", "Feature idea|A feature I would love is..."],
+      dss_prompts: ["Policymakers need...|Policymakers need to see...", "Simulate scenario|A useful scenario to simulate would be...", "Data needed|The data I would need to make decisions is...", "Possible barrier|A barrier to using this system might be..."],
+      access_prompts: ["Accessibility gap|Accessibility is a problem for me because...", "Map layer idea|A map layer I would find useful is...", "Who is overlooked?|Groups that are often overlooked in planning are...", "Reachability|I wish it were easier to reach..."]
+    },
+    de: {
+      header_sub: "EU DUT Partnerschaft · Ideen-Workshop",
+      nav_about: "🏙️ Über uns", nav_citizen: "📱 Bürger-App", nav_dss: "🧭 DSS-Plattform", nav_access: "🗺️ Erreichbarkeit",
+      about_title: "Die Zukunft der städtischen Mobilität gestalten",
+      about_subtitle: "SmartUrbanity ist eine europäische Initiative, die Städte in 15-Minuten-Orte verwandelt — wo tägliche Bedürfnisse in kurzer Gehweite erreichbar sind. Wir stellen die Bürgerinnen und Bürger in den Mittelpunkt der Stadtplanung.",
+      card_mission_title: "Unsere Mission", card_mission_text: "Verbesserung der städtischen Erreichbarkeit, Inklusivität und Nachhaltigkeit durch die direkte Einbeziehung der Bürger in den Planungsprozess.",
+      card_timeline_title: "Projektzeitraum", card_timeline_text: "Von Januar 2025 bis Dezember 2027 mit Pilottests in 5 europäischen Städten und der Grossregion Zürich.",
+      card_zhaw_title: "Rolle der ZHAW", card_zhaw_text: "Die ZHAW leitet WP6 Verbreitung und das Thurgau-Pilotprojekt mit MATSim-agentenbasierter Modellierung für die DRT-ÖV-Integration mit PostAuto AG.",
+      card_tools_title: "Drei digitale Werkzeuge", card_tools_text: "Das Toolkit umfasst eine Bürger-Engagement-App, eine Erreichbarkeitsanalyseplattform und ein Entscheidungsunterstützungssystem.",
+      pilot_title: "Pilotstädte",
+      share_title: "Teilen Sie Ihre Ideen",
+      share_text: "Dieser Workshop ist Ihre Chance, die SmartUrbanity-Tools mitzugestalten. Nutzen Sie die Registerkarten oben, um Ihre Ideen zu teilen.<br><br>💡 <strong>Tipp:</strong> Nach dem Einreichen können Sie Ihre eigenen Ideen <strong>bearbeiten oder löschen</strong>.<br><br><strong>Klicken Sie oben auf eine Registerkarte, um zu beginnen →</strong>",
+      session_tag: "Brainstorming-Sitzung",
+      citizen_title: "Bürger-Engagement-App", citizen_desc: "Eine mobile App, die Bürgerinnen und Bürger in den Stadtplanungsprozess einbindet. Nutzer können Probleme melden, tägliche Fahrten verfolgen und Einblicke zu Sicherheit und Erreichbarkeit teilen.",
+      dss_title: "Entscheidungsunterstützungssystem (DSS)", dss_desc: "Eine Plattform für Entscheidungsträger zur Bewertung von Eingriffen in die städtische Mobilität mit agentenbasierten Modellen. Sie hilft bei der Bewertung demografischer Auswirkungen, Kosten und Dringlichkeit.",
+      access_title: "Erreichbarkeitsanalyseplattform", access_desc: "Eine WebGIS-Plattform zur Visualisierung von Erreichbarkeitsdaten in Gemeinden mit interaktiven Karten, Heatmaps und demografischen Filtern.",
+      submit_title: "Ihre Idee einreichen", prompts_label: "💡 ANREGUNGEN",
+      name_label: "Ihr Name (optional)", name_placeholder: "z.B. Maria, Anonym...",
+      category_label: "Kategorie", idea_label: "Ihre Idee oder Ihr Kommentar", idea_placeholder: "Schreiben Sie hier Ihre Idee...",
+      tag_idea: "💡 Idee", tag_feature: "⭐ Funktion", tag_concern: "⚠️ Bedenken", tag_question: "❓ Frage",
+      submit_btn: "Idee einreichen →", wall_title: "Bisher geteilte Ideen",
+      status_connecting: "Verbinde...", status_live: "Live — Ideen werden in Echtzeit gespeichert", status_error: "Verbindungsfehler — Bitte neu laden",
+      loading: "Ideen werden geladen...", empty: "Noch keine Ideen — seien Sie der Erste!",
+      mine_label: "· Ihre Idee", edit_btn: "✏️ Bearbeiten", delete_btn: "🗑️ Löschen",
+      edit_title: "✏️ Ihre Idee bearbeiten", cancel_btn: "Abbrechen", save_btn: "Änderungen speichern",
+      toast_submit: "✅ Ihre Idee wurde eingereicht! Danke.", toast_update: "✅ Ihre Idee wurde aktualisiert!", toast_delete: "🗑️ Ihre Idee wurde gelöscht.",
+      confirm_delete: "Möchten Sie diese Idee wirklich löschen?",
+      citizen_prompts: ["Ich würde mehr nutzen...|Ich würde die App mehr nutzen, wenn sie hätte...", "Bürger brauchen...|Bürger wie ich brauchen...", "Ein Bedenken...|Ein Bedenken, das ich habe, ist...", "Funktionsidee|Eine Funktion, die ich lieben würde, ist..."],
+      dss_prompts: ["Entscheider brauchen...|Entscheidungsträger müssen sehen...", "Szenario simulieren|Ein nützliches Szenario zum Simulieren wäre...", "Daten benötigt|Die Daten, die ich für Entscheidungen benötige, sind...", "Mögliche Hürde|Eine Hürde bei der Nutzung könnte sein..."],
+      access_prompts: ["Erreichbarkeitslücke|Erreichbarkeit ist für mich ein Problem, weil...", "Kartenebene|Eine nützliche Kartenebene wäre...", "Wer wird übersehen?|Gruppen, die oft in der Planung übersehen werden...", "Erreichbarkeit|Ich wünschte, es wäre einfacher, zu erreichen..."]
+    },
+    fr: {
+      header_sub: "Partenariat EU DUT · Atelier d'idées",
+      nav_about: "🏙️ À propos", nav_citizen: "📱 App Citoyenne", nav_dss: "🧭 Plateforme DSS", nav_access: "🗺️ Accessibilité",
+      about_title: "Construire l'avenir de la mobilité urbaine",
+      about_subtitle: "SmartUrbanity est une initiative européenne transformant les villes en lieux à 15 minutes — où les besoins quotidiens sont accessibles à pied ou à vélo. Nous plaçons les citoyens au cœur de la planification urbaine.",
+      card_mission_title: "Notre Mission", card_mission_text: "Améliorer l'accessibilité, l'inclusivité et la durabilité urbaines en intégrant les citoyens directement dans le processus de planification.",
+      card_timeline_title: "Calendrier du projet", card_timeline_text: "De janvier 2025 à décembre 2027, avec des tests pilotes dans 5 villes européennes et la région de Zurich.",
+      card_zhaw_title: "Rôle de la ZHAW", card_zhaw_text: "La ZHAW dirige WP6 Dissémination et le pilote Thurgovie, en utilisant la modélisation MATSim pour l'intégration DRT-TP avec PostAuto AG.",
+      card_tools_title: "Trois outils numériques", card_tools_text: "La boîte à outils comprend une App d'engagement citoyen, une plateforme d'analyse d'accessibilité et un système d'aide à la décision.",
+      pilot_title: "Villes pilotes",
+      share_title: "Partagez vos idées",
+      share_text: "Cet atelier est votre chance de façonner les outils SmartUrbanity. Utilisez les onglets ci-dessus pour partager vos idées — elles sont enregistrées en permanence.<br><br>💡 <strong>Conseil :</strong> Après soumission, vous pouvez <strong>modifier ou supprimer vos propres idées</strong>.<br><br><strong>Cliquez sur un onglet ci-dessus pour commencer →</strong>",
+      session_tag: "Session de brainstorming",
+      citizen_title: "Application d'engagement citoyen", citizen_desc: "Une application mobile qui implique les citoyens dans le processus de planification urbaine. Les utilisateurs peuvent signaler des problèmes, suivre leurs trajets et partager des insights sur la sécurité et l'accessibilité.",
+      dss_title: "Système d'aide à la décision (DSS)", dss_desc: "Une plateforme pour les décideurs permettant d'évaluer les interventions de mobilité urbaine à l'aide de modèles basés sur les agents. Elle aide à évaluer les impacts démographiques, les coûts et l'équité.",
+      access_title: "Plateforme d'analyse d'accessibilité", access_desc: "Une plateforme WebGIS pour visualiser les données d'accessibilité dans les communautés, avec des cartes interactives, des cartes de chaleur et des filtres démographiques.",
+      submit_title: "Soumettez votre idée", prompts_label: "💡 SUGGESTIONS",
+      name_label: "Votre nom (optionnel)", name_placeholder: "ex. Maria, Anonyme...",
+      category_label: "Catégorie", idea_label: "Votre idée ou commentaire", idea_placeholder: "Écrivez votre idée ici...",
+      tag_idea: "💡 Idée", tag_feature: "⭐ Fonctionnalité", tag_concern: "⚠️ Préoccupation", tag_question: "❓ Question",
+      submit_btn: "Soumettre l'idée →", wall_title: "Idées partagées jusqu'ici",
+      status_connecting: "Connexion...", status_live: "En direct — idées sauvegardées en temps réel", status_error: "Erreur de connexion — veuillez actualiser",
+      loading: "Chargement des idées...", empty: "Pas encore d'idées — soyez le premier !",
+      mine_label: "· votre idée", edit_btn: "✏️ Modifier", delete_btn: "🗑️ Supprimer",
+      edit_title: "✏️ Modifier votre idée", cancel_btn: "Annuler", save_btn: "Enregistrer les modifications",
+      toast_submit: "✅ Votre idée a été soumise ! Merci.", toast_update: "✅ Votre idée a été mise à jour !", toast_delete: "🗑️ Votre idée a été supprimée.",
+      confirm_delete: "Êtes-vous sûr de vouloir supprimer cette idée ?",
+      citizen_prompts: ["J'utiliserais plus...|J'utiliserais plus l'app si elle avait...", "Les citoyens ont besoin...|Les citoyens comme moi ont besoin de...", "Une préoccupation...|Une préoccupation que j'ai est...", "Idée de fonctionnalité|Une fonctionnalité que j'adorerais serait..."],
+      dss_prompts: ["Les décideurs ont besoin...|Les décideurs doivent voir...", "Simuler un scénario|Un scénario utile à simuler serait...", "Données nécessaires|Les données dont j'aurais besoin sont...", "Obstacle possible|Un obstacle à l'utilisation pourrait être..."],
+      access_prompts: ["Lacune d'accessibilité|L'accessibilité est un problème pour moi car...", "Couche de carte|Une couche de carte utile serait...", "Qui est oublié ?|Les groupes souvent négligés dans la planification...", "Accessibilité|J'aimerais qu'il soit plus facile d'atteindre..."]
+    },
+    it: {
+      header_sub: "Partenariato EU DUT · Workshop di idee",
+      nav_about: "🏙️ Chi siamo", nav_citizen: "📱 App Cittadina", nav_dss: "🧭 Piattaforma DSS", nav_access: "🗺️ Accessibilità",
+      about_title: "Costruire il futuro della mobilità urbana",
+      about_subtitle: "SmartUrbanity è un'iniziativa europea che trasforma le città in luoghi a 15 minuti — dove i bisogni quotidiani sono raggiungibili a piedi o in bicicletta. Mettiamo i cittadini al centro della pianificazione urbana.",
+      card_mission_title: "La nostra missione", card_mission_text: "Migliorare l'accessibilità urbana, l'inclusività e la sostenibilità integrando i cittadini direttamente nel processo di pianificazione.",
+      card_timeline_title: "Cronologia del progetto", card_timeline_text: "Da gennaio 2025 a dicembre 2027, con test pilota in 5 città europee e nella regione della Grande Zurigo.",
+      card_zhaw_title: "Il ruolo di ZHAW", card_zhaw_text: "ZHAW guida WP6 Disseminazione e il pilota Turgovia, utilizzando la modellazione MATSim per l'integrazione DRT-TP con PostAuto AG.",
+      card_tools_title: "Tre strumenti digitali", card_tools_text: "Il toolkit include un'App di coinvolgimento cittadino, una piattaforma di analisi dell'accessibilità e un sistema di supporto alle decisioni.",
+      pilot_title: "Città pilota",
+      share_title: "Condividi le tue idee",
+      share_text: "Questo workshop è la tua occasione per plasmare gli strumenti SmartUrbanity. Usa le schede sopra per condividere le tue idee — vengono salvate definitivamente.<br><br>💡 <strong>Suggerimento:</strong> Dopo l'invio, puoi <strong>modificare o eliminare le tue idee</strong>.<br><br><strong>Clicca su una scheda sopra per iniziare →</strong>",
+      session_tag: "Sessione di brainstorming",
+      citizen_title: "App di coinvolgimento cittadino", citizen_desc: "Un'app mobile che coinvolge i cittadini nel processo di pianificazione urbana. Gli utenti possono segnalare problemi, tracciare i percorsi quotidiani e condividere informazioni su sicurezza e accessibilità.",
+      dss_title: "Sistema di supporto alle decisioni (DSS)", dss_desc: "Una piattaforma per i decisori per valutare gli interventi di mobilità urbana usando modelli basati sugli agenti. Aiuta a valutare gli impatti demografici, i costi, l'equità e l'urgenza.",
+      access_title: "Piattaforma di analisi dell'accessibilità", access_desc: "Una piattaforma WebGIS per visualizzare i dati di accessibilità nelle comunità, con mappe interattive, heatmap e filtri demografici.",
+      submit_title: "Invia la tua idea", prompts_label: "💡 SUGGERIMENTI",
+      name_label: "Il tuo nome (opzionale)", name_placeholder: "es. Maria, Anonimo...",
+      category_label: "Categoria", idea_label: "La tua idea o commento", idea_placeholder: "Scrivi qui la tua idea...",
+      tag_idea: "💡 Idea", tag_feature: "⭐ Funzionalità", tag_concern: "⚠️ Preoccupazione", tag_question: "❓ Domanda",
+      submit_btn: "Invia idea →", wall_title: "Idee condivise finora",
+      status_connecting: "Connessione...", status_live: "In diretta — idee salvate in tempo reale", status_error: "Errore di connessione — ricarica la pagina",
+      loading: "Caricamento idee...", empty: "Nessuna idea ancora — sii il primo!",
+      mine_label: "· la tua idea", edit_btn: "✏️ Modifica", delete_btn: "🗑️ Elimina",
+      edit_title: "✏️ Modifica la tua idea", cancel_btn: "Annulla", save_btn: "Salva modifiche",
+      toast_submit: "✅ La tua idea è stata inviata! Grazie.", toast_update: "✅ La tua idea è stata aggiornata!", toast_delete: "🗑️ La tua idea è stata eliminata.",
+      confirm_delete: "Sei sicuro di voler eliminare questa idea?",
+      citizen_prompts: ["Userei di più...|Userei di più l'app se avesse...", "I cittadini hanno bisogno...|Cittadini come me hanno bisogno di...", "Una preoccupazione...|Una preoccupazione che ho è...", "Idea di funzionalità|Una funzionalità che amerei sarebbe..."],
+      dss_prompts: ["I decisori hanno bisogno...|I decisori devono vedere...", "Simulare uno scenario|Uno scenario utile da simulare sarebbe...", "Dati necessari|I dati di cui avrei bisogno per decidere sono...", "Possibile ostacolo|Un ostacolo all'utilizzo potrebbe essere..."],
+      access_prompts: ["Lacuna di accessibilità|L'accessibilità è un problema per me perché...", "Livello mappa|Un livello mappa utile sarebbe...", "Chi viene ignorato?|Gruppi spesso trascurati nella pianificazione...", "Raggiungibilità|Vorrei che fosse più facile raggiungere..."]
+    }
+  };
+
+  let currentLang = localStorage.getItem('su_lang') || 'en';
   let editDocId = null, editTab = null;
 
+  let sk = localStorage.getItem('su_sk');
+  if (!sk) { sk = 'u_' + Math.random().toString(36).substr(2,14) + '_' + Date.now(); localStorage.setItem('su_sk', sk); }
+
+  // ── APPLY LANGUAGE ──
+  function applyLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('su_lang', lang);
+    const t = T[lang];
+
+    // Update lang buttons
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      b.classList.toggle('active', b.textContent === lang.toUpperCase());
+    });
+
+    // Update all data-i18n elements
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+
+    // Update placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (t[key] !== undefined) el.placeholder = t[key];
+    });
+
+    // Rebuild prompt chips
+    ['citizen','dss','access'].forEach(tab => {
+      const container = document.getElementById(tab+'-prompts');
+      const prompts = t[tab+'_prompts'] || [];
+      container.innerHTML = prompts.map(p => {
+        const [label, full] = p.split('|');
+        return `<span class="prompt-chip" onclick="fillPrompt('${tab}','${full}')">${label}</span>`;
+      }).join('');
+    });
+
+    // Re-render walls with new language labels
+    ['citizen','dss','access'].forEach(tab => {
+      const wall = document.getElementById(tab+'-wall');
+      if (wall.dataset.rendered) renderWall(tab, JSON.parse(wall.dataset.rendered));
+    });
+  }
+
+  window.setLang = (lang) => applyLang(lang);
+
+  // ── TABS ──
   window.switchTab = (n, b) => {
     document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(x => x.classList.remove('active'));
     document.getElementById('tab-'+n).classList.add('active'); b.classList.add('active');
   };
 
+  // Tag selection
   document.querySelectorAll('.tag-row').forEach(row => {
     row.querySelectorAll('.tag-option').forEach(opt => {
       opt.addEventListener('click', () => {
@@ -356,47 +524,62 @@
   window.fillPrompt = (tab, text) => { document.getElementById(tab+'-text').value = text; document.getElementById(tab+'-text').focus(); };
 
   const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  const tagLabel = t => ({idea:'💡 Idea',feature:'⭐ Feature',concern:'⚠️ Concern',question:'❓ Question'}[t]||t);
+
+  function tagLabel(t) {
+    const tl = T[currentLang];
+    return {idea: tl.tag_idea, feature: tl.tag_feature, concern: tl.tag_concern, question: tl.tag_question}[t] || t;
+  }
 
   function setStatus(tab, ok) {
+    const t = T[currentLang];
     document.getElementById(tab+'-sd').className = 'status-dot '+(ok?'connected':'error');
-    document.getElementById(tab+'-st').textContent = ok ? 'Live — ideas saved in real time' : 'Connection error — try refreshing';
+    document.getElementById(tab+'-st').textContent = ok ? t.status_live : t.status_error;
   }
 
   function showToast(msg) {
-    const t = document.getElementById('toast'); t.textContent = msg;
-    t.classList.add('show'); setTimeout(()=>t.classList.remove('show'), 3000);
+    const el = document.getElementById('toast'); el.textContent = msg;
+    el.classList.add('show'); setTimeout(()=>el.classList.remove('show'), 3000);
   }
 
   function renderWall(tab, docs) {
     const wall = document.getElementById(tab+'-wall');
+    const t = T[currentLang];
     document.getElementById(tab+'-count').textContent = docs.length;
-    if (!docs.length) { wall.innerHTML='<div class="empty-state"><div class="empty-icon">💬</div>No ideas yet — be the first!</div>'; return; }
+    wall.dataset.rendered = JSON.stringify(docs);
+    if (!docs.length) {
+      wall.innerHTML = `<div class="empty-state"><div class="empty-icon">💬</div>${t.empty}</div>`;
+      return;
+    }
     wall.innerHTML = docs.map(d => {
       const mine = d.sessionKey === sk;
-      const ts = d.createdAt ? d.createdAt.toDate() : new Date();
+      const ts = d.createdAt ? new Date(d.createdAt) : new Date();
       const time = ts.toLocaleDateString('en-GB',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
       return `<div class="idea-card ${mine?'mine':''}">
         <div class="idea-card-top">
-          <span class="idea-card-name">👤 ${esc(d.name)}${mine?' <span class="mine-label">· your idea</span>':''}</span>
+          <span class="idea-card-name">👤 ${esc(d.name)}${mine?` <span class="mine-label">${t.mine_label}</span>`:''}</span>
           <span class="idea-card-tag ${d.tag}">${tagLabel(d.tag)}</span>
         </div>
         <div class="idea-card-text">${esc(d.text)}</div>
         <div class="idea-card-footer">
           <span class="idea-card-time">${time}</span>
           ${mine?`<div class="idea-card-actions">
-            <button class="action-btn edit-btn" onclick="openEdit('${tab}','${d.id}',\`${esc(d.text)}\`)">✏️ Edit</button>
-            <button class="action-btn delete-btn" onclick="deleteIdea('${tab}','${d.id}')">🗑️ Delete</button>
+            <button class="action-btn edit-btn" onclick="openEdit('${tab}','${d.id}',\`${esc(d.text)}\`)">${t.edit_btn}</button>
+            <button class="action-btn delete-btn" onclick="deleteIdea('${tab}','${d.id}')">${t.delete_btn}</button>
           </div>`:''}
         </div>
       </div>`;
     }).join('');
   }
 
+  // Live listeners
   ['citizen','dss','access'].forEach(tab => {
     onSnapshot(query(collection(db,tab+'-ideas'),orderBy('createdAt','desc')), snap => {
       setStatus(tab,true);
-      renderWall(tab, snap.docs.map(d=>({id:d.id,...d.data()})));
+      const docs = snap.docs.map(d => {
+        const data = d.data();
+        return {id:d.id, ...data, createdAt: data.createdAt ? data.createdAt.toDate().getTime() : Date.now()};
+      });
+      renderWall(tab, docs);
     }, ()=>setStatus(tab,false));
   });
 
@@ -405,16 +588,16 @@
     const tagEl=document.querySelector('#'+tab+'-tags .tag-option.selected'), btn=document.getElementById(tab+'-submit');
     const text=textEl.value.trim();
     if(!text){textEl.style.borderColor='#EF4444';textEl.focus();return;}
-    textEl.style.borderColor=''; btn.disabled=true; btn.textContent='Saving...';
+    textEl.style.borderColor=''; btn.disabled=true; btn.textContent='...';
     try {
       await addDoc(collection(db,tab+'-ideas'),{
         name:nameEl.value.trim()||'Anonymous', text, tag:tagEl?tagEl.dataset.val:'idea',
         sessionKey:sk, createdAt:serverTimestamp()
       });
       nameEl.value=''; textEl.value='';
-      showToast('✅ Your idea has been submitted! Thank you.');
-    } catch(e){console.error(e);alert('Error saving. Please try again.');}
-    finally{btn.disabled=false;btn.textContent='Submit Idea →';}
+      showToast(T[currentLang].toast_submit);
+    } catch(e){console.error(e);alert('Error saving.');}
+    finally{btn.disabled=false;btn.textContent=T[currentLang].submit_btn;}
   };
 
   window.openEdit = (tab, id, text) => {
@@ -426,17 +609,19 @@
   window.saveEdit = async () => {
     const newText=document.getElementById('edit-textarea').value.trim();
     if(!newText) return;
-    try { await updateDoc(doc(db,editTab+'-ideas',editDocId),{text:newText}); closeModal(); showToast('✅ Your idea has been updated!'); }
+    try { await updateDoc(doc(db,editTab+'-ideas',editDocId),{text:newText}); closeModal(); showToast(T[currentLang].toast_update); }
     catch(e){console.error(e);alert('Error updating.');}
   };
-
   window.deleteIdea = async (tab, id) => {
-    if(!confirm('Are you sure you want to delete this idea?')) return;
-    try { await deleteDoc(doc(db,tab+'-ideas',id)); showToast('🗑️ Your idea has been deleted.'); }
+    if(!confirm(T[currentLang].confirm_delete)) return;
+    try { await deleteDoc(doc(db,tab+'-ideas',id)); showToast(T[currentLang].toast_delete); }
     catch(e){console.error(e);alert('Error deleting.');}
   };
 
   document.getElementById('edit-modal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal();});
+
+  // Init language
+  applyLang(currentLang);
 </script>
 </body>
 </html>
