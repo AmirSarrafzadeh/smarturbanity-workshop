@@ -603,3 +603,9 @@ textarea { resize: vertical; min-height: 110px; }
   .cities-row { gap: 0.5rem; }
   .city-chip { font-size: 0.78rem; padding: 5px 12px; }
 }
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
