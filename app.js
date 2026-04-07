@@ -423,7 +423,7 @@ window.submitIdea = async (tab) => {
     nameEl.value=''; textEl.value='';
     showToast(T[currentLang].toast_submit);
   } catch(e){console.error(e);alert('Error saving.');}
-  finally{btn.disabled=false;btn.textContent=T[currentLang].submit_btn;}
+  finally{btn.textContent=T[currentLang].submit_btn;}
 };
 
 window.openEdit = (tab, id, text) => {
